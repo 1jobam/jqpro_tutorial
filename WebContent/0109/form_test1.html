@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+</head>
+<body>
+<pre>
+	submit이 발생되면 입력양식의 값을 서버페이지로 보낸다
+	입력 양식의 값은 name속성을 이용한다.
+	
+	서버페이지(test.jsp)에서는 name속성값을 이용해서
+	요청된 값을 가져간다.
+	request.getParameter("username");
+	request.getParameter("userpass");
+	
+	보내는 방식에는 get, post가 있다.
+	get방식 : 입력값이 url주소 뒤에?문자열로 보낸다.
+	
+	post방식 : 입력값이 url주소 뒤에붙지 않고
+			requestHeader에 숨겨서 보내진다.
+</pre>
+	<h1>get전송</h1>
+	<form action="test.jsp" method="get">
+	이름 : <input type="text" name="username"><br/>
+	비밀번호 : <input type = "password" name="userpass"><br/>
+	
+	<button type="button">확인</button>
+	<button>전송</button> 
+	<button type="submit">전송</button>
+	
+	<input type="button" value="확인">
+	<input type="submit" value="전송">
+	</form>
+	<br/><hr/>
+	<h1>post전송</h1>
+	<form action="test.jsp" method="post">
+	이름 : <input type="text" name="username"><br/>
+	비밀번호 : <input type = "password" name="userpass"><br/>
+	
+	<button type="button">확인</button>
+<!-- 	서브 및이 없어도 button은 자동전송을 한다. -->
+	<button>자동전송</button> 
+	<button type="submit">전송</button>
+	
+	<input type="button" value="확인">
+	<input type="submit" value="전송">
+	</form>
+</body>
+</html>

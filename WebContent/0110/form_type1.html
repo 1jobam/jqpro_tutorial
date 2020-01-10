@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	form{
+		width : 50%;
+		border : 10px outset blue;
+		paddin : 10px;
+/* 		margin-top : 50px; */
+/* 		margin-left : 100px; */
+/* mrgin : 위, 오른쪽, 아래, 왼쪽 인데 3개면 위, 왼쪽오른쪾, 아래 가되고
+값이 4개면 위아래, 왼쪽오른쪽이 된다 */
+		margin : 20px auto;
+	}
+</style>
+</head>
+<body>
+<form action="form_type.jsp" method="post">
+	아아디 : <input type="text" value="aaa" name="id" size="50"><br/>
+	비밀번호 : <input type="password" name="pass"><br/>
+	주민등록번호 : <input type="number" value="asd" name="asd" placeholder="노가입니다 하나씩 올려"><br/>
+	<input type="hidden" value="korea" name="name"><br/>
+	성별 : 
+	<input type="radio" checked value="m" name="gender">남자
+	<input type="radio" value="f" name="gender">여자
+	<br/>
+	관심분야 :
+	<input type="checkbox" checked value="java" name="like">JAVA
+	<input type="checkbox" value="jsp" name="like">JSP
+	<input type="checkbox" checked value="db" name="like">DB
+	<input type="checkbox" value="htmlcss" name="like">HTML/CSS
+	<input type="checkbox" checked value="javascript" name="like">JAVAScript
+	<br/>
+	첨부파일
+	<input type="file" name="file"> <br/>
+	<br/>
+	<input type="submit" value="전송">
+	<input type="reset" value="취소">
+	<input type="image" src="../images/check.png"><br/>
+</form>
+</body>
+</html>

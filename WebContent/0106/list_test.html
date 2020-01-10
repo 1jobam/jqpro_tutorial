@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 외부 스타일을 연결 적용 -->
+<link rel = "stylesheet" href="../css/mystyle.css">
+
+<style>
+	div{
+		width : 40%;
+		background : black;
+		border-bottom : 10px double red;
+		border-top : 3px solid red;
+		padding : 20px;
+		margin : 10px;
+		float : left;
+	}
+	p{
+		color : white;
+	}
+	li{
+		color : white;
+	}
+	img{
+		width : 240px;
+		height : 120px;
+	}
+	*{
+		background : red;
+	}
+</style>
+</head>
+
+<body>
+<h1>카페 메뉴</h1>
+<pre>
+	외부에 저장된 스타일 파일을 html안에서 링크로 연결 해서 사용
+	&lt;link rel = "stylesheet" href="../css/mystyle.css"&gt;
+</pre>
+<div>
+	<p>ul : 번호 없는 리스트 li에 텍스트를</p>
+	
+	<ul>
+		<li>아메리카노</li>
+		<li>카푸치노</li>
+		<li>카페라떼</li>
+	</ul>
+</div>
+
+<div>
+	<p>ol : 번호 있는 리스트 li에 텍스트를</p>
+	
+	<ol>
+		<li>아메리카노</li>
+		<li>카푸치노</li>
+		<li>카페라떼</li>
+	</ol>
+</div>
+<div>
+	<p>ul : 번호 없는 리스트 . li : 이미지</p>
+	<ul>
+		<li><img src = "../images/아메리카노.jpg"></li>
+		<li><img src = "../images/카푸치노.jpg"></li>
+		<li><img src = "../images/카페라떼.jpg"></li>
+	</ul>
+</div>
+<div>
+	<p>ol : 번호 있는 리스트 . li : 이미지</p>
+	<ol>
+		<li><img src = "../images/아메리카노.jpg"></li>
+		<li><img src = "../images/카푸치노.jpg"></li>
+		<li><img src = "../images/카페라떼.jpg"></li>
+	</ol>
+</div>
+<div>
+	<p>ul : 번호 없는 리스트 . li : 링크 - 텍스트</p>
+	<ul>
+		<li><a href = "http://www.naver.com">네이버</a></li>
+		<li><a href = "http://www.daum.net">다음</a></li>
+		<li><a href = "http://www.nate.com">네이트</a></li>
+		<li><a href = "http://google.com">구글</a></li>
+		<li><a href = "http://www.w3schools.com">w3스쿨</a></li>
+		<li><a href = "../0103/ptag연습.html">ptag연습</a></li>
+		<li><a href = "../0103/webpage1.html">webpage1연습</a></li>
+		<li><a href = "../0106/text_test.html">test연습</a></li>
+	</ul>
+</div>
+<div>
+	<p>ol : 번호 있는 리스트 . li : 링크 - 텍스트</p>
+	<ol>
+		<li><a href = "http://www.naver.com"target="_blank">네이버</a></li>
+		<li><a href = "http://www.daum.net">다음</a></li>
+		<li><a href = "http://www.nate.com">네이트</a></li>
+		<li><a href = "http://google.com">구글</a></li>
+		<li><a href = "http://www.w3schools.com">w3스쿨</a></li>
+		<li><a href = "../0103/ptag연습.html">ptag연습</a></li>
+		<li><a href = "../0103/webpage1.html">webpage1연습</a></li>
+		<li><a href = "../0106/text_test.html">test연습</a></li>
+	</ol>
+</div>
+<div>
+	<p>ul : 번호 없는 리스트 . li : 링크 - 이미지</p>
+	<ul>
+		<li><a href = "http://www.naver.com"><img src = "../images/coffee.gif"></a></li>
+		<li><a href = "../images/rest01.jpg"><img src = "../images/coffee1.gif"></a></li>
+		<li><a href = "../images/rest02.jpg"><img src = "../images/coffee1.jpg"></a></li>
+	</ul>
+</div>
+<div>
+	<p>ul : 번호 없는 리스트 . li : 다른 리스트 -진행 (디스크 - 서클 - 스케어)</p>
+	<ul>
+		<li> 꽃 
+			<ul> 
+			<li>개나리
+				<ol>
+					<li>나리1</li>
+					<li>나리2</li>
+				</ol>
+			<li>진달래
+				</li> 
+			</ul> 
+		</li>
+		
+		<li>aa</li>
+		<li>bb</li>
+		<li>cc</li>
+	</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function calc(){
+		//id가 price인 요소에 접근, 값을 가져오기
+		x = document.getElementById("price").value;
+// 		x = a.value; 위에방식으로도 가능
+		//id가 su인 요소에 접근, 값을 가져온다
+		b = document.getElementById("su");
+		y = b.value;
+		//계산
+		res = x * y;
+		//출력
+		output = "수량이 적다 많이 구매해야지" + "\n" + 
+				"가격 : " + x + "\n" +
+				"수량 : " + y + "\n" +
+				"금액 : " + res;
+		alert(output);
+	}
+</script>
+<style>
+	h1{
+		text-align: center;
+	}
+	form{
+		width : 50%;
+		border : 10px outset blue;
+		padding : 10px;
+		margin : 20px auto;
+	}
+</style>
+</head>
+<body>
+<h1>판매왕</h1>
+<form>
+	가격 : <input type="text" id="price"><br/>
+	수량 : <input type="text" id="su"><br/>
+	<input type="button" value="확인" onclick="calc()"><br/>
+</form>
+<br/>
+<hr/>
+<button onclick="alert('hello')">클릭</button>
+<br/>
+<hr/>
+<form action="textarea.jsp" method="post">
+이름 : <input type="text" name="name"><br/><br/>
+고객의 소리 <br>
+<textarea name="area" cols="50" rows="10"></textarea>
+<br/>
+<button>전송</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+pre{
+	border : 5px double black;
+	padding : 20px;
+	font-size : 15px;
+	color : white;
+	background : #bebebe;
+}
