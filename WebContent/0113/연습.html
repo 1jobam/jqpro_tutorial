@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이메일 전송화면</title>
+<style>
+	*{
+		font-size:15px;
+		margin : 7px;
+	}
+	form{
+		margin : 20px auto;
+	} 
+	label{
+		display:inline-block;
+		width : 95px;
+	}
+	legend{
+		font-size: 32px;
+	}
+	.lab2{
+		width : 50px;
+	}
+	.txt{
+		border:2px solid pink;
+	}
+/* 	#bom{ */
+/* 		border : 3px double pink; */
+/* 	} */
+	textarea[id=bom]{
+		border : 3px dotted orange;
+	}
+	
+	input[type = submit]{
+		background : cyan;
+	}
+	
+	input[type = reset]{
+		background : red;
+		color : white;
+	}
+</style>
+</head>
+<body>
+<form action="formtest.jsp" method="post">
+	<fieldset>
+		<legend>이메일 전송화면</legend>
+		<label>이름 :</label> 
+			<input class="txt" type="text" name="name">
+		<br/>
+		<label>이메일 주소 :</label>
+			<input type="email" name="addr">
+		<br/>
+		<label>내용 :</label>
+		<br/>
+		<textarea class="txt" id="bom" name="text" rows="10" cols="100"></textarea>
+		<br/>
+		<input type="submit" value="전송">
+		<input type="reset" value="재설정">
+	</fieldset>
+</form>
+<br/>
+<hr/>
+<br/>
+<form action="formtest.jsp" method="post">
+	<fieldset>
+		<legend>회원 가입 화면</legend>
+		<label class="lab2">이름 :</label>
+			<input class="txt" type="text" name="name">
+		<br/>
+		<label class="lab2">주소 :</label>
+			<input class="txt" type="text" name="addr">
+		<br/>
+		<label class="lab2">email :</label>
+			<input type="email" name="email">
+		<br/>
+		<input type="radio" name="m" checked>
+		<label>Male</label>
+		<br/>
+		<input type="radio" name="w">
+		<label>Female</label>
+		<br/>
+		
+		<input type="submit" value="Send">
+		<input type="reset" value="원래대로">
+	</fieldset>
+</form>
+</body>
+</html>

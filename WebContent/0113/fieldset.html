@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	label{
+		display:inline-block;
+		width:90px;
+	}
+	fieldset{
+		width:40%;
+	}
+	span{
+		border:1px solid blue;
+		padding:7px;
+	}
+/* 	pre{ */
+/* 		background:black; */
+/* 	} */
+</style>
+<script>
+	function getValue(){
+		//id가 inrang 인 요소에 접근, 값을 가져온다
+		a = document.getElementById("inrang").value;
+		//tagName이 span인 요소에 출력
+		document.getElementsByTagName("span")[0].innerHTML = a;
+	}
+</script>
+<link rel="stylesheet" href=../css/mystyle.css>
+</head>
+<body>
+<pre>
+	fieldset : 요소들의 그룹핑에 사용
+	label : 화면에 표시되는 일반문자
+	display : 화면에 표시되는 속성을 설정
+				inline : 가로세로를 지정할수 없다.
+				block : 가로세로 길이를 설정할수 있으며 자동으로 줄이 바뀐다.
+				inline-block : 줄은 자동으로 바뀌지 않지만 가로세로를 지정할수 있다.
+				none : 화면상에 표시가 없도록 한다.
+	&lt;input type="range" : onmousemove="getValue()", onchange="getValue()"&gt;
+	
+		onchange = ie에서 실행, 크롬에서는 정적시 동작확인가능
+		
+		//id가 inrang 인 요소에 접근, 값을 가져온다
+		a = document.getElementById("inrang").value;
+		//tagName이 span인 요소에 출력
+		document.getElementsByTagName("span")[0].innerHTML = a;
+</pre>
+
+<form>
+	<fieldset>
+		<legend>인적사항</legend>
+		<label for="name">이름 </label> 
+			<input id="name" type="text" value="korea"><br/>
+			
+		<label for="tel">전화번호 </label>
+			<input id="tel" type="text" placeholder="010-1234-1234"><br/>
+			
+		<label for="addr">주소 </label>
+			<input id="addr" type="text"><br/>
+			
+		<input type="submit" value="확인">
+	</fieldset>
+	<br/>
+	<fieldset>
+		<legend>기타입력</legend>
+		<label>이메일</label> 
+			<input type="email" placeholder="limm2770@naver.com">
+		<br/>
+		<label>나의 홈주소</label>
+		 	<input type="url" value="http://localhost">
+		<br/>
+		<label>생년월일</label> 
+			<input type="date">
+		<br/>
+		<label>키</label>
+			<input type="number" min = "160" max ="200" step="1" value="178">
+		<br/>
+		<label>기간</label> 
+			<input id="inrang" onmousemove="getValue()" type="range" min="1000" max="5000" value="2000">
+		<span></span>
+	</fieldset>
+		<br/>
+	<fieldset>
+		<input type="submit" value="제출">
+		<input type="reset" value="초기화">
+	</fieldset>
+</form>
+</body>
+</html>
