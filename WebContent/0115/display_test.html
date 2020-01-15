@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<style>
+	#btn3, img{
+		display : none;
+	} 
+</style>
+
+<script>
+window.onload = function(){
+	//전역변수 활용 var을 붙이면 지역변수가 된다
+	b3 = document.getElementById('btn3');
+	vimg = document.getElementsByTagName('img')[0];
+}
+
+	function show(){
+		//이미지와 확인버튼을 보이게 설정
+		//요소에 접근한다.
+
+		
+		//각 요소에 style지정
+		b3.style.display = 'block';
+		vimg.style.display = 'inline';
+	}
+	function hide(){
+		//이미지와 확인버틍을 안보이게 설정
+		
+		//각 요소에 style지정
+		b3.style.display = 'none';
+		vimg.style.display = 'none';
+	}
+</script>
+
+</head>
+<body>
+	<button onclick="hide()" id="btn1" type="button">감추기</button>
+	<button onclick="show()" id="btn2" type="button">보이기</button>
+	<button id="btn3" type="button">확인</button>
+	<img src="../images/cafelatte.jpg">
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<style>
+	table{
+		margin : 30px auto;
+		empty-cells : hide;
+	}
+	td{
+		width : 150px;
+		height : 30px;
+		text-align: center;
+	}
+	th{
+		height: 40px;
+		width : 200px;
+		background : crimson;
+	}
+	caption {
+		font-size: 1.5em;
+		margin: 10px auto;
+		caption-side: bottom;
+	}
+	.odd{
+		background : lightblue;	
+	}
+	.even{
+		background : lightgray;
+	}
+	#tab2 tr:nth-child(2n){
+		background : pink;
+	}
+	#tab2 tr:nth-child(2n+1){
+		background : lightgreen;
+	}
+</style>
+</head>
+<body>
+<pre>
+	tr태그에 번갈아 가며 class=even class=odd 를 부여
+	.odd{
+		background : lightblue;	
+	}
+	.even{
+		background : lightgray;
+	}
+</pre>
+<table border = "1" id = "tab1">
+		<caption>VIP고객리스트</caption>
+		<tr>
+			<th>이름</th>
+			<th>주소</th>
+			<th>전화번호</th>
+		</tr>
+		<tr class="odd">
+			<td>홍길동</td>
+			<td>대구</td>
+			<td>010-2345-6543</td>
+		</tr>
+		<tr class="even">
+			<td>고릴라</td>
+			<td>대전</td>
+			<td>010-1278-9054</td>
+		</tr>
+		<tr class="odd">
+			<td>개나리</td>
+			<td>서울</td>
+			<td>010-6123-6890</td>
+		</tr>
+		<tr class="even">
+			<td>진달래</td>
+			<td>부산</td>
+			<td>010-3478-9316</td>
+		</tr>
+	</table>
+	<br/><hr/><br/>
+<pre>
+구조적 의사 클래스를 이용
+	#tab2 tr:nth-child(2n){
+		background : pink;
+	}
+	#tab2 tr:nth-child(2n+1){
+		background : lightgreen;
+	}
+</pre>
+	<table border = "1" id = "tab2">
+		<caption>VIP고객리스트</caption>
+		<tr>
+			<th>이름</th>
+			<th>주소</th>
+			<th>전화번호</th>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>대구</td>
+			<td>010-2345-6543</td>
+		</tr>
+		<tr>
+			<td>고릴라</td>
+			<td>대전</td>
+			<td>010-1278-9054</td>
+		</tr>
+		<tr>
+			<td>개나리</td>
+			<td>서울</td>
+			<td>010-6123-6890</td>
+		</tr>
+		<tr>
+			<td>진달래</td>
+			<td>부산</td>
+			<td>010-3478-9316</td>
+		</tr>
+	</table>
+</body>
+</html>

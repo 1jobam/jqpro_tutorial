@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<style>
+	table{
+		margin : 30px auto;
+		empty-cells : hide;
+	}
+	td{
+		width : 150px;
+		height : 30px;
+		text-align: center;
+	}
+	th{
+		height: 40px;
+		width : 200px;
+		background : crimson;
+	}
+	table#tab2{
+		border-spacing : 10px;
+		text-align: center;
+	}
+	#tab3{
+		border-collapse : collapse;
+	}
+	caption {
+		font-size: 1.5em;
+		margin: 10px auto;
+		caption-side: bottom;
+	}
+/* 	table, td, tr{ */
+/* 		border : 1px solid blue; */
+/* 	} */
+</style>
+</head>
+<body>
+<pre>
+	table{
+		margin : 30px auto;
+		empty-cells : hide;
+	}
+</pre>
+	<table border = "1">
+		<tr>
+			<td>이름</td>
+			<td>주소</td>
+			<td>전화번호</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>대구</td>
+			<td>010-2345-6543</td>
+		</tr>
+		<tr>
+			<td>고릴라</td>
+			<td>대전</td>
+			<td>010-1278-9054</td>
+		</tr>
+		<tr>
+			<td>개나리</td>
+			<td>서울</td>
+			<td>010-6123-6890</td>
+		</tr>
+		<tr>
+			<td>진달래</td>
+			<td>부산</td>
+			<td></td>
+		</tr>
+	</table>
+	<br/><hr/><br/>
+	<pre>
+	table#tab2{
+		border-spacing : 10px;
+		text-align: center;
+	}
+	</pre>
+	<table border = "1" id = "tab2">
+		<tr>
+			<td>이름</td>
+			<td>주소</td>
+			<td>전화번호</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>대구</td>
+			<td>010-2345-6543</td>
+		</tr>
+		<tr>
+			<td>고릴라</td>
+			<td>대전</td>
+			<td>010-1278-9054</td>
+		</tr>
+		<tr>
+			<td>개나리</td>
+			<td>서울</td>
+			<td>010-6123-6890</td>
+		</tr>
+		<tr>
+			<td>진달래</td>
+			<td>부산</td>
+			<td>010-3478-9316</td>
+		</tr>
+	</table>
+	<br/><hr/><br/>
+	<pre>
+		#tab3{
+		border-collapse : collapse;
+		}
+		th{
+		height: 40px;
+		width : 200px;
+		background : crimson;
+		}
+	</pre>
+	<table border = "1" id = "tab3">
+		<caption>VIP고객 리스트</caption>
+		<tr>
+			<th>이름</th>
+			<th>주소</th>
+			<th>전화번호</th>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>대구</td>
+			<td>010-2345-6543</td>
+		</tr>
+		<tr>
+			<td>고릴라</td>
+			<td>대전</td>
+			<td>010-1278-9054</td>
+		</tr>
+		<tr>
+			<td>개나리</td>
+			<td>서울</td>
+			<td>010-6123-6890</td>
+		</tr>
+		<tr>
+			<td>진달래</td>
+			<td>부산</td>
+			<td>010-3478-9316</td>
+		</tr>
+	</table>
+</body>
+</html>
