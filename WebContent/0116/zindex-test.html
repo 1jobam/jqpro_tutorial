@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<style>
+	div{
+		position : absolute;
+		width : 100px;
+		height : 100px;
+	}
+	#d1{
+		background : blue;
+		top : 50px;
+		left : 20px;
+		z-index : 5;
+	}
+	#d2{
+		background : yellow;
+		top : 60px;
+		left : 40px;
+		z-index : 10;
+	}
+	#d3{
+		background : green;
+		top : 80px;
+		left : 60px;
+	}
+	hr{
+		position : relative;
+		top : 130px;
+	}
+	img{
+		width:"200";
+		height:"200";
+		position : relative;
+		top : 100px;
+		z-index : -1;
+	}
+</style>
+</head>
+<body>
+	<div id = "d1"></div>
+	<div id = "d2"></div>
+	<div id = "d3"></div>
+	
+	<br/><br/>
+	<hr color = 'red'/>
+	
+	<img src="../images/back.jpg"/>
+	<p>img 요소의 z-index가 -1이므로 다른 요소의 뒤에 위치한다</p>
+</body>
+</html>

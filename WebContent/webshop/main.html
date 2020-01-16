@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<style>
+	
+	ul{
+		list-style-type:none;
+		text-align: center;
+		background: black;
+	}
+	
+	li{
+		color:white;
+		display : inline-block;
+		margin : 2px;
+		font-size: 20px;
+		padding : 5px;
+		letter-spacing: 5px;
+		word-spacing: 10px;
+	}
+	
+	#left{
+		padding-left:10px;
+		float:left;
+		width: 150px;
+		height: 150px;
+	}
+	
+	.ca{
+		width: 140px;
+		height: 25px;
+		color: white;
+		background:gray;
+		border : 1px solid black;
+		padding : 4px 0px 0px 13px; 
+	}
+	
+	
+	#h3ca{
+		margin-bottom: 3px;
+	}
+	
+	#right{
+		float:right;
+		padding-right:20px;
+		width: 200px;
+		height: 150px;	
+	}
+	
+	#id,#pass{
+		width: 150px;
+	}
+	
+	#foo{
+		position:absolute;
+		left:0;
+		bottom:0;
+		width:100%;
+		padding:15px 0;
+		text-align: center;
+		background: black;
+		color: white;
+	}
+	
+	#h4lo{
+		margin-bottom: 3px;
+	}
+	
+	#h4sh{
+		margin-bottom: -10px;
+	}
+	
+	#main, #article1{
+		position: absolute;
+  		text-align: center; 
+		width : calc(70% - 10%);
+		height: 100%;
+		left: 100px;
+		right : 300px;
+	}
+	
+	.lo{
+		margin : 3px 0px 3px 0px;
+	}
+
+</style>
+</head>
+<body>
+<header>
+	<h1>
+		<img src="../images/HI.GIF" />
+		<a href="main.html">Web Shop</a>
+	</h1>
+</header>
+
+<hr color="black"/>
+<nav>
+	<ul>
+      <li><a href="main.html">HOME</a></li>
+      <li><a href="#">ABOUT US</a></li>
+      <li><a href="#">NEWS</a></li>
+      <li><a href="#">MY ACCOUNT</a></li>
+      <li><a href="#">CONTACTS</a></li>	
+	</ul>
+</nav>
+<hr color="black"/>
+
+<aside id="left">
+	<h3 id="h3ca">카테고리</h3>
+        <div class="ca"><a href='../webshop/computer.html' target="cifr1">컴퓨터</a></div>
+        <div class="ca"><a href='../webshop/computer.html' target="cifr1">의류</a></div>
+        <div class="ca"><a href='../webshop/computer.html' target="cifr1">음악</a></div>
+        <div class="ca"><a href='../webshop/computer.html' target="cifr1">영화</a></div>
+        <div class="ca"><a href='../webshop/computer.html' target="cifr1">스포츠/레저</a></div>
+        <div class="ca"><a href='../webshop/computer.html' target="cifr1">가구/인테리어</a></div>
+        <div class="ca"><a href='../webshop/computer.html' target="cifr1">식품</a></div>
+</aside>
+
+<section id="main">
+        <article id="article1">
+            <iframe name="cifr1" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+        </article>
+</section>
+    
+
+<aside id="right">
+        <div id="shopcart">
+        <h4 id="h4sh">Shopping Cart</h4>
+        <p>현재 쇼핑카트에 물품이 없습니다.<br/>
+        <a href="main.html">쇼핑카트 보기</a></p>
+        </div>
+
+        <div id="login">
+            <h4 id="h4lo">Log In</h4>
+            <form action="#">
+           	아이디<br/>
+            <input id="id" type="text"><br/>
+                     패스워드<br/>
+            <input id="pass" type="password"><br/>
+            <input class="lo" type="submit" value="로그인">
+            <input class="lo" type="reset" value="초기화"><br/>
+            <a class="reg" href="#">회원가입</a>
+            <a class="reg" href="#">비밀번호분실</a>
+            </form>
+        </div>
+    </aside>
+
+<footer>
+<h4 id="foo">Copyright (c) 2020 Web Shop</h4>
+</footer>
+</body>
+</html>
