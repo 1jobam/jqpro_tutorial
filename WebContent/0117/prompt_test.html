@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function input(){
+		aa = prompt("문자를 입력..", "홍길동");
+		
+		document.getElementById('result').innerHTML = aa;
+		
+		/* bb = document.getElementById('result');
+		bb.innerHTML = aa; */
+	}
+
+
+</script>
+<style>
+	div{
+		
+	}
+</style>
+</head>
+<body>
+<pre>
+버튼 클릭시 문자를 입력하여 div에 출력
+</pre>
+<button onclick="input()" type="button">입력</button>
+<br/>
+<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+
+window.onload = function(){
+	now = new Date();
+	noString = now.toLocaleString();
+	dateString = now.toLocaleDateString();
+	timeString = now.toLocaleTimeString();
+	
+	now = new Date();
+	
+	area = document.getElementsByTagName('textarea')[0];
+	
+	data = now + "\n" + noString + "\n" + dateString + "\n" + timeString;
+	
+	area.innerHTML = data;	
+	
+}
+</script>
+</head>
+<pre>
+	실행하면 날짜와 시간이 자동으로 출력
+	
+	window.onload = function(){ }
+	body 요소들이 document객체로 생성되고
+	window에 load가 완료시점에서 function()를 수행하도록 한다.
+</pre>
+<body>
+	<textarea rows="10" cols="50"></textarea>
+</body>
+</html>

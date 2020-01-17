@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<!-- 외부 스크립트 -->
+<script src="../js/myscript.js"></script>
+
+<script>
+//내부스크립트
+	function proc1(){
+		//textarea에 접근 style변경
+		area = document.getElementsByTagName('textarea')[0];
+		
+		//호출시마다 배경색을 변경 - 랜덤을 이용
+		r = parseInt(Math.random() * 255);
+		g = parseInt(Math.random() * 255);
+		b = parseInt(Math.random() * 255);
+		
+		area.style.background = 'rgb(' + r + ',' + g + ',' + b + ')'
+		
+		r16 = r.toString(16);
+		g16 = g.toString(16);
+		b16 = b.toString(16);
+		
+		//area.style.background = '#' + r16 + g16 + b16;
+		
+	}
+</script>
+</head>
+<body>
+	
+	
+<button onclick="proc1()" type="button">내부</button>
+<button onclick="proc2()" type="button">외부</button>
+<button type="button" onclick="alert('HEllo~~~')">인라인</button>
+<button type="button" onclick="proc1(), proc2()">다중</button>
+<br/>
+<textarea rows="68" cols="268"></textarea>
+</body>
+</html>

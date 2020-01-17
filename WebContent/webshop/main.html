@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>My Shop Page</title>
 <link rel="stylesheet" href="../css/mystyle.css">
 <style>
 	
@@ -30,6 +30,7 @@
 	}
 	
 	.ca{
+		display : inline-block;
 		width: 140px;
 		height: 25px;
 		color: white;
@@ -37,7 +38,23 @@
 		border : 1px solid black;
 		padding : 4px 0px 0px 13px; 
 	}
-	
+	 
+	a:link {
+		text-decoration: none;
+	}
+	a:visited {
+		text-decoration: none; 
+		color: white;
+	}
+	a:active {
+		text-decoration: none; 
+		color: #333333;
+		font-size: 1.2em;
+	}
+	a:hover {
+	text-decoration: underline; 
+	color: green;
+	}
 	
 	#h3ca{
 		margin-bottom: 3px;
@@ -47,7 +64,7 @@
 		float:right;
 		padding-right:20px;
 		width: 200px;
-		height: 150px;	
+		height: 150px;
 	}
 	
 	#id,#pass{
@@ -85,14 +102,19 @@
 	.lo{
 		margin : 3px 0px 3px 0px;
 	}
-
+	
+	#atitle, #cart1, #reg1, #reg2{
+		color: black;
+	}
+	
+	
 </style>
 </head>
 <body>
 <header>
-	<h1>
+	<h1 id = title>
 		<img src="../images/HI.GIF" />
-		<a href="main.html">Web Shop</a>
+		<a id="atitle" href="main.html">Web Shop</a>
 	</h1>
 </header>
 
@@ -111,12 +133,12 @@
 <aside id="left">
 	<h3 id="h3ca">카테고리</h3>
         <div class="ca"><a href='../webshop/computer.html' target="cifr1">컴퓨터</a></div>
-        <div class="ca"><a href='../webshop/computer.html' target="cifr1">의류</a></div>
-        <div class="ca"><a href='../webshop/computer.html' target="cifr1">음악</a></div>
-        <div class="ca"><a href='../webshop/computer.html' target="cifr1">영화</a></div>
-        <div class="ca"><a href='../webshop/computer.html' target="cifr1">스포츠/레저</a></div>
-        <div class="ca"><a href='../webshop/computer.html' target="cifr1">가구/인테리어</a></div>
-        <div class="ca"><a href='../webshop/computer.html' target="cifr1">식품</a></div>
+        <div class="ca"><a href='../webshop/codi.html' target="cifr1">의류</a></div>
+        <div class="ca"><a href='../webshop/sound.html' target="cifr1">음악</a></div>
+        <div class="ca"><a href='../webshop/movie.html' target="cifr1">영화</a></div>
+        <div class="ca"><a href='../webshop/sports.html' target="cifr1">스포츠/레저</a></div>
+        <div class="ca"><a href='../webshop/cost.html' target="cifr1">가구/인테리어</a></div>
+        <div class="ca"><a href='../webshop/food.html' target="cifr1">식품</a></div>
 </aside>
 
 <section id="main">
@@ -130,7 +152,7 @@
         <div id="shopcart">
         <h4 id="h4sh">Shopping Cart</h4>
         <p>현재 쇼핑카트에 물품이 없습니다.<br/>
-        <a href="main.html">쇼핑카트 보기</a></p>
+        <a id="cart1" target="cifr1" href="shopcart.html">쇼핑카트 보기</a></p>
         </div>
 
         <div id="login">
@@ -142,8 +164,8 @@
             <input id="pass" type="password"><br/>
             <input class="lo" type="submit" value="로그인">
             <input class="lo" type="reset" value="초기화"><br/>
-            <a class="reg" href="#">회원가입</a>
-            <a class="reg" href="#">비밀번호분실</a>
+            <a id="reg1" target="cifr1" href="register.html">회원가입</a>
+            <a id="reg2" href="#">비밀번호분실</a>
             </form>
         </div>
     </aside>

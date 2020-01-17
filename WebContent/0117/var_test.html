@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+
+	function print(){
+		x = "hello world ~ ";
+		
+		//1.
+		alert(x);
+		
+		//2. span태그에 출력
+		vspan = document.getElementById('sp1');
+		vspan.innerHTML = x;
+		
+		//3.input text 에 출력
+		vinput = document.getElementById('txt');
+		vinput.value = x;
+	}
+
+</script>
+<style>
+	span{
+		display : inline-block;
+		border : 1px solid gray;
+		width : 180px;
+		height : 19px;
+	}
+</style>
+</head>
+<body>
+<pre>
+	x = "hello world~"
+	버튼을 클릭하면 x변수의 값을 출력한다.
+	
+	span태그에 출력 - <strong>innerHTML</strong>
+		vspan = document.getElementById('sp1');
+		vspan.innerHTML = x;
+		
+	input text 에 출력 - <strong>value</strong>
+		vinput = document.getElementById('txt');
+		vinput.value = x;
+</pre>
+	<button onclick="print()" type="button">확인</button><br/>
+	결과(span) : <span id="sp1"></span><br/>
+	결과(input) : <input type="text" id="txt"><br/>
+</body>
+</html>

@@ -5,49 +5,242 @@
 <title>Insert title here</title>
 <style>
 *{
-background : hotpink;
+margin-bottom : 0px;
 }
-h1{
-	color : white;
-	font-size : 150px;
+body{
+	background: linear-gradient(#F2B9A1, #EA6264) fixed;
 }
+nav{
+	float:left;
+	padding : 50px;
+	height:85%;
+   	width: calc(40% - 10%);
+	position:fixed;
+	z-index:999;
+	top:0px;
+	left:0px;
+	background : linear-gradient(-135deg, #E4A972, #9941D8) fixed;
+}	
+
+.arr{
+	display: inline;
+}
+
+section{
+	display: inline-block; 
+	float: left;
+	padding : 50px;
+	height:100%;
+   	width: calc(70% - 15%);
+	position:absolute;
+	z-index:999;
+	top:0px;
+	left:35%;
+	
+}
+
+#foo{
+		z-index:1000;
+		position:fixed;
+		left:0;
+		bottom:0;
+		width:100%;
+		font-size:15px;
+		padding:15px;
+		text-align: center;
+		background: black;
+		color: white;
+}
+
+div{
+	margin : 20px;
+	border : 2px solid black;
+	display: inline-block;
+	float: left;
+	padding : 20px;
+	width : calc(200px - 40px);
+	height: 220px;
+	overflow: auto;
+}
+
+a{
+	text-align: center;
+}
+
+h4{
+	border-radius: 30% 30% 100% 100%;
+	width:50%;
+	height:40px;
+	background-color:pink;
+	text-align: center;
+}
+
 </style>
 </head>
 <body>
-	<h1>헬로우 ~~~</h1>
-	<h2>Hello World !</h2>
-	<a href= "./0107/myhome.html">마이홈페이지</a>
-	<a href= "http://192.168.205.21/">이누리</a>
-	<a href= "http://192.168.205.32/jqpro">김지선</a>
-	<a href= "http://192.168.205.36/jqpro">주향한</a>
-	<a href= "http://192.168.205.46/jqpro">강현철</a>
-	<a href= "http://192.168.205.45/jqpro">박진영</a>
-	<a href= "http://192.168.205.33/jqpro">구한나</a>
-	<a href= "http://192.168.205.42/jqpro">이병훈</a>
-	<a href= "http://192.168.205.04/jqpro">연은주</a>
-	<a href= "http://192.168.205.37/jqpro">정보람</a>
-	<a href= "http://192.168.205.19/jqpro">이지형</a>
-	<a href= "http://192.168.205.48/jqpro">민태홍</a>
-	<a href= "http://192.168.205.29/jqpro">이승재</a>
-	<a href= "http://192.168.205.41/">김령환</a>
-	<a href= "http://192.168.205.35/jqpro">윤창훈</a>
-	<a href= "http://192.168.205.22/jqpro">정대석</a>
-	<a href= "http://192.168.205.44/jqpro">이예림</a>
-	<a href= "http://192.168.205.03/">김경운</a>
-	<a href= "http://192.168.205.30/jqpro">강현지</a>
-	<a href= "http://192.168.205.30/jqpro">정재영</a>
+
+	<nav>
+		<h2>hello~~</h2>
+		<h1>웹프로그램 시작입니다.</h1>
+		<h3>Html은 웹페이지의 내용을 구성하고.</h3>
+		<h3>CSS는 내용을 예쁘게, 멋지게 꾸며줍니다.</h3>
+		<h3>JavaScript는 웹페이지가 동적으로 동작하게 만듭니다.</h3>
+	</nav>
+
+<section>
+	<div>
+		<h4>각 주소</h4>
+		<ul>
+		<li class="arr"><a href= "http://192.168.205.21/">이누리</a></li>
+		<li class="arr"><a href= "http://192.168.205.32/jqpro">김지선</a></li><br/>
+		<li class="arr"><a href= "http://192.168.205.36/jqpro">주향한</a></li>
+		<li class="arr"><a href= "http://192.168.205.46/jqpro">강현철</a></li><br/>
+		<li class="arr"><a href= "http://192.168.205.45/jqpro">박진영</a></li>
+		<li class="arr"><a href= "http://192.168.205.33/jqpro">구한나</a></li><br/>
+		<li class="arr"><a href= "http://192.168.205.42/jqpro">이병훈</a></li>
+		<li class="arr"><a href= "http://192.168.205.04/jqpro">연은주</a></li><br/>
+		<li class="arr"><a href= "http://192.168.205.37/jqpro">정보람</a></li>
+		<li class="arr"><a href= "http://192.168.205.19/jqpro">이지형</a></li><br/>
+		<li class="arr"><a href= "http://192.168.205.48/jqpro">민태홍</a></li>
+		<li class="arr"><a href= "http://192.168.205.29/jqpro">이승재</a></li><br/>
+		<li class="arr"><a href= "http://192.168.205.41/">김령환</a></li>
+		<li class="arr"><a href= "http://192.168.205.35/jqpro">윤창훈</a></li><br/>
+		<li class="arr"><a href= "http://192.168.205.22/jqpro">정대석</a></li>
+		<li class="arr"><a href= "http://192.168.205.44/jqpro">이예림</a></li><br/>
+		<li class="arr"><a href= "http://192.168.205.03/">김경운</a></li>
+		<li class="arr"><a href= "http://192.168.205.30/jqpro">강현지</a></li><br/>
+		<li class="arr"><a href= "http://192.168.205.30/jqpro">정재영</a></li>
+		</ul>
+	</div>
 	
 	<div>
-		<h1>0109</h1>
+		<h4>0103</h4>
 		<ul>
-			<li><a href="0109/form_test1.html">입력테스트1</a></li>
+			<li><a href="0103/ptag연습.html">ptag연습</a></li>
+			<li><a href="0103/webpage1.html">webpage1</a></li>
 		</ul>
 	</div>
+	
 	<div>
-		<h1>0110</h1>
+		<h4>0106</h4>
 		<ul>
-			<li><a href="0110/form_type1.html">회원가입</a></li>
+			<li><a href="0106/list_test.html">list_test.html</a></li>
+			<li><a href="0106/text_test.html">text_test.html</a></li>
+			<li><a href="0106/webcoffee.html">webcoffee.html</a></li>
 		</ul>
 	</div>
+	
+	<div>
+		<h4>0107</h4>
+		<ul>
+			<li><a href="0107/americano.html">americano.html</a></li>
+			<li><a href="0107/atarget_id.html">atarget_id.html</a></li>
+			<li><a href="0107/atarget_id2.html">atarget_id2.html</a></li>
+			<li><a href="0107/cafelatte.html">cafelatte.html</a></li>
+			<li><a href="0107/cappuccino.html">cappuccino.html</a></li>
+			<li><a href="0107/chinese.html">chinese.html</a></li>
+			<li><a href="0107/myhome.html">myhome.html</a></li>
+			<li><a href="0107/table_test1.html">table_test1.html</a></li>
+			<li><a href="0107/tablespan_test.html">tablespan_test.html</a></li>
+			<li><a href="0107/tablespan_test2.html">tablespan_test2.html</a></li>
+			<li><a href="0107/thumnail.html">thumnail.html</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h4>0108</h4>
+		<ul>
+			<li><a href="0108/audio_test.html">audio_test.html</a></li>
+			<li><a href="0108/box-sizing.html">box-sizing.html</a></li>
+			<li><a href="0108/div_span_test.html">div_span_test.html</a></li>
+			<li><a href="0108/iframe_test.html">iframe_test.html</a></li>
+			<li><a href="0108/video_test.html">video_test.html</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h4>0109</h4>
+		<ul>
+			<li><a href="0109/form_color.html">form_color.html</a></li>
+			<li><a href="0109/form_test1.html">form_test1.html</a></li>
+			<li><a href="0109/form_test2.html">form_test2.html</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h4>0110</h4>
+		<ul>
+			<li><a href="0110/calc_function.html">calc_function.html</a></li>
+			<li><a href="0110/form_select.html">form_select.html</a></li>
+			<li><a href="0110/form_type1.html">form_type1.html</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h4>0113</h4>
+		<ul>
+			<li><a href="0113/fieldset.html">fieldset.html</a></li>
+			<li><a href="0113/font-size.html">font-size.html</a></li>
+			<li><a href="0113/webpage1.html">webpage1.html</a></li>
+			<li><a href="0113/연습.html">연습.html</a></li>
+			<li><a href="0113/의사클래스선택.html">의사클래스선택.html</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h4>0114</h4>
+		<ul>
+			<li><a href="0114/background_padding.html">background_padding.html</a></li>
+			<li><a href="0114/backgroundImage.html">backgroundImage.html</a></li>
+			<li><a href="0114/font_test.html">font_test.html</a></li>
+			<li><a href="0114/list-style-type.html">list-style-type.html</a></li>
+			<li><a href="0114/test_style.html">test_style.html</a></li>
+			<li><a href="0114/word_wrap.html">word_wrap.html</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h4>0115</h4>
+		<ul>
+			<li><a href="0115/absolute_position.html">absolute_position.html</a></li>
+			<li><a href="0115/display_test.html">display_test.html</a></li>
+			<li><a href="0115/fixed_position.html">fixed_position.html</a></li>
+			<li><a href="0115/relative_position.html">relative_position.html</a></li>
+			<li><a href="0115/table-style.html">table-style.html</a></li>
+			<li><a href="0115/table-style2.html">table-style2.html</a></li>
+			<li><a href="0115/수평리스트.html">수평리스트.html</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h4>0116</h4>
+		<ul>
+			<li><a href="0116/float_test.html">float_test.html</a></li>
+			<li><a href="0116/layout_test.html">layout_test.html</a></li>
+			<li><a href="0116/overflow_test.html">overflow_test.html</a></li>
+			<li><a href="0116/simentic_test.html">simentic_test.html</a></li>
+			<li><a href="0116/zindex-test.html">zindex-test.html</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<h4>0117</h4>
+		<ul>
+			<li><a href="0117/js_send.html">js_send.html</a></li>
+			<li><a href="0117/js_test1.html">js_test1.html</a></li>
+			<li><a href="0117/js_test2.html">js_test2.html</a></li>
+			<li><a href="0117/js_test3.html">js_test3.html</a></li>
+			<li><a href="0117/js_test4.html">js_test4.html</a></li>
+			<li><a href="0117/prompt_test.html">prompt_test.html</a></li>
+			<li><a href="0117/script_test.html">script_test.html</a></li>
+			<li><a href="0117/send.jsp">send.jsp</a></li>
+			<li><a href="0117/var_test.html">var_test.html</a></li>
+		</ul>
+	</div>
+</section>
+
+<footer>
+	<h5 id="foo">Copyright (c) 2020 WebPage</h5>
+</footer>
 </body>
 </html>
