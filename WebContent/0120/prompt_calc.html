@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function proc(){
+		//두개의 수와 연산자를 입력
+		a = prompt('첫번째 숫자를 입력하세요', '정수로 입력해');
+		b = prompt('두번째 숫자를 입력하세요', '정수로 입력해');
+		c = prompt('연산자를 입력하세요', '연산자 알지?');
+		
+		console.log(a + "," + b);
+		
+// 		if(c == '+'){
+// 			res = parseInt(a) + parseInt(b);
+// 		}else if(c == '-'){
+// 			res = a - b;
+// 		}else if(c == '*'){
+// 			res = a * b;
+// 		}else if(c == '/'){
+// 			res = a / b;
+// 			res = res.toFixed(2);
+// 		}
+		
+		switch(c){
+			case '+' :
+				res = parseInt(a) + parseInt(b);	
+				break;
+			case '-' :
+				res = a - b;
+				break;
+			case '*' :
+				res = a * b;
+				break;
+			case '/' :
+				res = a / b;
+				res = res.toFixed(2);
+				break;
+		}
+		
+		
+		console.log(res);
+		
+		document.getElementsByTagName('div')[0].innerHTML = "<h1>" + a + " " + c + " " + b + " = " + res + "</h1>";
+		
+	}
+</script>
+</head>
+<body>
+<pre>
+	버튼을 클릭하면 두개의 수와 연산자를 입력받아
+	연산을 수행 한다
+	결과는 div에 출력한다.
+</pre>
+<button onclick="proc()" type="button">확인</button>
+<br/><br/>
+<div></div>
+</body>
+</html>

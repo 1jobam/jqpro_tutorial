@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+
+ 	 window.onload = function(){
+		input1 = document.getElementsByTagName('input')[0];
+		input2 = document.getElementsByTagName('input')[1];
+		input3 = document.getElementsByTagName('input')[2];
+		output = document.getElementsByTagName('div')[0];
+		output2 = document.getElementsByTagName('div')[1];
+ 	} 
+ 	//를 사용해서 속도를 더욱 효과적이게 할수있다.
+
+
+/* 	function inputs(){
+		t1 = document.getElementsByTagName('input')[0].value;
+		t2 = document.getElementsByTagName('input')[1].value;
+	}
+	
+	function ress(){
+		document.getElementsByTagName('input')[2].value = res;
+	} */
+
+
+	function addProc(){
+		inputs();
+		
+		res = parseInt(t1) + parseInt(t2);
+		
+		ress();
+	}
+
+	function mutiProc(){
+		inputs();
+		
+		res = t1 * t2;
+		
+		ress();
+	}
+	
+	function subProc(){
+		inputs();
+		
+		res = t1 - t2;
+		
+		ress();
+	}
+	
+	function divideProc(){
+		inputs();
+		
+		res = t1 / t2;
+		
+		ress();
+	}
+	
+	function proc(abc){
+		//alert(abc.innerHTML);
+		//alert(abc.textContent);
+		
+		//버튼의 글자
+		txt = abc.textContent;
+		
+		//입력한값
+		vinput1 = input1.value;
+		vinput2 = input2.value;
+		
+		//console 로그 찍기
+		console.log(vinput1 + "," + vinput2);
+		
+		if(txt == ' + '){
+			res = parseInt(vinput1) + parseInt(vinput2);
+		}else if(txt == ' - '){
+			res = vinput1 - vinput2;
+		}else if(txt == ' * '){
+			res = vinput1 * vinput2;
+		}else if(txt == ' / '){
+			res = vinput1 / vinput2;
+		}
+		
+		input3.value = res;
+		//output.innerHTML = "<h2>" + res + "</h2>";
+		output.textContent = "textContent : "+ "<h1>" + res + "</h2>";
+		output2.innerHTML = "innerHTML : " + "<h1>" + res + "</h2>";
+	}
+	
+</script>
+<style>
+</style>
+</head>
+<body>
+	<h2>덧셈 계산기</h2>
+	
+	첫번째 수 : <input type="text"><br/>
+	두번째 수 : <input type="text"><br/>
+	두개의 결과 : <input type="text"><br/>
+<!-- 	<button onclick="addProc()" type="button"> + </button>
+	<button onclick="mutiProc()" type="button"> * </button>
+	<button onclick="subProc()" type="button"> - </button>
+	<button onclick="divideProc()" type="button"> / </button> -->
+	<button onclick="proc(this)" type="button"> + </button>
+	<button onclick="proc(this)" type="button"> * </button>
+	<button onclick="proc(this)" type="button"> - </button>
+	<button onclick="proc(this)" type="button"> / </button>
+	
+	<br/><br/>
+	<pre>
+		div에 출력 : 
+		innerHTML	: 출력내용속에 html태그가 실행되면서 출력한다.
+		textContent	: 출력내용속에 html태그를 실행하려 하면 글자로 출력된다.
+		
+		//output.innerHTML = "&lt;h2&gt;" + res + "&lt;/h2&gt;";
+		output.textContent = "&lt;h1&gt;" + res + "&lt;/h2&gt;";
+	</pre>
+	<div></div>
+	<div></div>
+</body>
+</html>

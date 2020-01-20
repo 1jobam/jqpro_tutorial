@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function score(){
+		
+		while(true){
+			input = prompt("너의 성적을 말해봐", "나만 알고있을께 정수로 적어");
+			
+			if(input >= 0 && input <=100) break;
+			
+			alert("정상적인 성적이 아닙니다.");
+		}
+		
+		res = parseInt(input / 10);
+		
+		switch(res){
+			case 10:
+			case 9 :
+				result = 'A';
+				break;
+			case 8 :
+				result = 'B';
+				break;
+			case 7 :
+				result = 'C';
+				break;
+			case 6 :
+				result = 'D';
+				break;
+			default :
+				result = 'F';
+		}
+		
+		document.getElementsByTagName('div')[0].innerHTML = "<h1>" + "너의 SCORE는 : " + result + " 이다..." + "</h1>";
+		
+	}
+</script>
+</head>
+<body>
+<pre>
+	버튼을 클릭하면 0~100 사이의 값을 입력
+	성적을 구한다 A, B, C, D, F 출력
+	출력은 div에 한다.
+	
+	switch를 이용한다.
+	switch는 값 비교시 비교연산자를 사용할 수 없다.
+</pre>
+<button onclick="score()" type="button">확인</button>
+<br/><br/>
+<div></div>
+</body>
+</html>
