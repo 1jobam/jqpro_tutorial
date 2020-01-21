@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function proc1(){
+		res = document.getElementById('result1');
+		str="";
+		for(i = 1; i <= 10; i++){
+			str += i + "<br/>";
+		}
+		res.innerHTML = str;
+	}
+	function proc2(){
+		res = document.getElementById('result2');
+		var sum = 0;
+		for(i = 1; i <= 10; i++){
+			sum += i;
+		}
+		res.innerHTML = "1 ~ 10 까지의 합은  : " + sum;
+	}
+	function proc3(){
+		input = prompt("출력하시고 싶은 구구단의 수를 입력하여주세요.", "1 ~ 9")
+		res = document.getElementById('result3');
+		dan = "";
+		res1 = 0;
+		for(i = 1; i <= 9; i++){
+			res1 = input * i;
+			
+			dan += input + " * " + i + " = " + res1 + "<br>";
+		}
+		res.innerHTML = dan;
+	}
+	function proc4(){
+		res = document.getElementById('result4');
+		dan = "";
+		
+		for(var i = 2; i <= 9; i++){
+			for(var j = 1; j <= 9; j++){
+				var temp = i * j;
+				dan += i + ' * ' + j + ' = ' + temp + '<br/>';
+			}
+			dan += "<br/>";
+		}
+		console.log(i + '*' + j + '=' + temp);
+		res.innerHTML = dan;
+	}
+	
+	function proc5(){
+		dan = "";
+		
+		for(i = 2; i < 10; i++){
+			dan += "***" + i + "단 ****\t";
+		}
+		dan += "<br/>";
+		for(var i = 1; i <= 9; i++){
+			for(var j = 2; j <= 9; j++){
+				var temp = i * j;
+				dan += j + " * " + i + " = " + temp + "\t";
+			}
+			dan += "<br/>";
+		}
+		document.getElementById('result5').style.whiteSpace = "pre";
+		document.getElementById('result5').innerHTML = dan;
+	}
+	
+	function proc6(){
+		tab = "<h3>구구단표</h3>";
+		tab += "<table>";
+		for(var i = 1; i <= 9; i++){
+			tab += "<tr>";
+			tab += "<td>" + i + "</tb>";
+			for(var j = 2; j <= 9; j++){
+				tab += "<td>" + i * j + "</td>";
+			}
+			tab += "</tr>";
+		}
+		tab += "</table>";
+	
+		document.getElementById('result6').innerHTML = tab;
+	}
+</script>
+<style>
+	div{
+		height: auto;
+		padding : 10px;
+		margin : 10px;
+		border : 1px dotted orange;
+	}
+	table, td{
+		border: 1px solid blue;
+	}
+</style>
+</head>
+<body>
+
+<h3>1 ~ 10까지 출력</h3>
+<button onclick="proc1()" type="button">1~10</button>
+<div id="result1"></div>
+<hr/>
+
+<h3>1 ~ 10까지 합</h3>
+<button onclick="proc2()" type="button">1~10합</button>
+<div id="result2"></div>
+<hr/>
+
+<h3>입력한 수의 구구단 출력</h3>
+<button onclick="proc3()" type="button">구구단</button>
+<div id="result3"></div>
+<hr/>
+
+<h3>구구단 전체 출력 - 세로</h3>
+<button onclick="proc4()" type="button">구구단 전체</button>
+<div id="result4"></div>
+<hr/>
+
+<h3>구구단 전체 출력 - 가로</h3>
+<button onclick="proc5()" type="button">구구단 전체</button>
+<div id="result5"><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></div>
+<hr/>
+
+<h3>구구단 전체 출력 - table </h3>
+<button onclick="proc6()" type="button">구구단 전체</button>
+<div id="result6"></div>
+<hr/>
+
+</body>
+</html>

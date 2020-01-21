@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function proc(){
+		a = prompt("첫번째 사람 입력", "가위, 바위, 보 를 입력하여주세요.");
+		b = prompt("두번째 사람 입력", "가위, 바위, 보 를 입력하여주세요.");
+		
+		res = "첫번째 사람은 : " + a + "를 냈습니다." + "<br/>";
+		res += "두번째 사람은 : " + b + "를 냈습니다." + "<br/>";
+		
+		if(a == b){
+			res = "비김";
+		}else if(a == "가위" && b == "보" || a == "보" && b == "바위" || a == "바위" && b == "가위"){
+			res += "결과 : 첫번째 사람이 승리하였습니다.";	
+		}else{
+			res += "결과 : 두번째 사람이 승리하였습니다.";
+		}
+		
+		document.getElementsByTagName('div')[0].innerHTML = res;
+	}
+</script>
+</head>
+<body>
+<button onclick="proc()" type="button">☆ 대결 ☆</button>
+<br/><br/>
+<div></div>
+</body>
+</html>

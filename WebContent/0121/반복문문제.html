@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+
+	function proc1(){
+		var sum = 0;
+// 		for(var i = 2; i <= 200; i += 2){
+// 				sum += i;
+// 		}
+		for(var i = 1; i <= 200; i++){
+			if(i % 2 != 0){
+				continue;
+			}
+			sum += i;
+		}
+		document.getElementById('result1').innerHTML = "결과 : " + sum;
+	}
+	
+	function proc2(){
+		var sum = 0;
+		var input;
+		var str = "";
+		while(input != 0){
+			input = parseInt(prompt("더할 값을 입력하여 주세요.(0을 입력하면 누적된 값까지만 출력됩니다.)", "정수를 입력하여주세요."));
+			str += input + ",";
+			sum += input;
+		}
+		document.getElementById('result2').innerHTML = "누적된 값 : " + sum + "입력 한 값 : " + str;
+	}
+		
+	function proc3(){
+		var sum = 0;
+		var res = 0;
+		for(var i = 1; i <= 10; i++){
+			for(var k = 1; k <= 10; k++){
+				sum = i + k;
+				if(sum % 3 != 0){
+					continue;
+				}
+				res += i + " + " + k + " = " + sum + ", ";
+			}
+		}
+		document.getElementById('result3').innerHTML = "더한 합이 3의 배수인 값들의 합 : " +  res;
+	}
+	
+	function proc4(){
+		str = "";
+		
+		for(var i = 1; i <= 100; i++){
+			if(i % 2 == 0 && i % 3 == 0){
+				str += i + ", ";
+			}
+		}
+
+		document.getElementById('result4').innerHTML = "2의 배수이면서 3의 배수의 값 : " + str;
+	}
+	
+	function proc5(){
+		str = "";
+		
+		while(true){
+		a = parseInt(prompt("첫번째 수 입력"));
+		b = parseInt(prompt("두번째 수 입력"));
+	
+			var num = 0;
+			if(a == 0 && b == 0){
+				alert("입력 종료");
+				break;
+			}else if(a + b < 100){
+				alert("다시 입력해주세요");
+				continue;
+			}else{
+				num = a + b;
+				str += a + " + " + b + " = " + num + "<br/>";
+			}
+		
+		}
+		document.getElementById('result5').innerHTML = str;
+	}
+	
+</script>
+<style>
+	div{
+		height: auto;
+		padding : 10px;
+		margin : 10px;
+		border : 1px dotted orange;
+	}
+</style>
+</head>
+<body>
+<h3>1. 1부터 200까지의 짝수의 합을 구하는 프로그램을 작성하시오.(continue를 이용)</h3>
+<button onclick="proc1()" type="button">실행</button>
+<br/>
+<div id="result1"></div>
+<hr/>
+
+<h3>2. 사용자가 입력한 값을 계속 더하고, 사용자가 0을 입력하면 그때까지 누적된 값을 출력하는 프로그램을 작성하시오.</h3>
+<button onclick="proc2()" type="button">실행</button>
+<br/>
+<div id="result2"></div>
+<hr/>
+
+<h3>3. 다중 for문을 이용해서 1~ 10 까지 중 i와 k의 더한 합이 3의 배수일때만 출력 continue를 이용</h3>
+<button onclick="proc3()" type="button">실행</button>
+<br/>
+<div id="result3"></div>
+<hr/>
+
+<h3>4. 1~100 까지 중 2의 배수이면서 3의 배수인것만 출력 </h3>
+<button onclick="proc4()" type="button">실행</button>
+<br/>
+<div id="result4"></div>
+<hr/>
+
+<h3>5. 두 수를 입력(prompt) 두수의 합이 100이상일이때만 출력 continue를 이용 , 두수 모두 0 이 입력되면 종료 </h3>
+<button onclick="proc5()" type="button">실행</button>
+<br/>
+<div id="result5"></div>
+<hr/>
+</body>
+</html>
