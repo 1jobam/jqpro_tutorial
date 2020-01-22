@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function proc1() {
+// 		document.getElementsByTagName('div')[0].innerHTML = '';
+		var str = '';
+		var k = 0;
+		//1~100사이의 난수를 5개를 발생
+		while (k < 10) {
+// 			var str = '';
+			for (var i = 0; i < 5; i++) {
+				str += parseInt((Math.random() * 100) + 1);
+				str += ", ";
+			}
+			str += "<br/>";
+			k++;
+			//div에 출력
+			for(var i = 0; i < 10; i++){
+			document.getElementsByTagName('div')[i].innerHTML = str;
+			}
+		}
+	}
+	
+	function proc2(but){
+		but.style.display="none";
+		//규칙적인 시간간격으로 실행 : setInterval()
+		x = setInterval(function(){
+			str = '';
+			for(var i = 0; i < 5; i++){
+				a = parseInt(Math.random() * 100 + 1);
+				str += a + " ";
+			}
+			str += "<br/>";
+			document.getElementsByTagName('div')[10].innerHTML = str;
+		}, 500);
+		console.log(x);
+	}
+	
+	function proc3(){
+		clearInterval(x);
+		document.getElementById('run').style.display = "block";
+	}
+	
+</script>
+<style>
+div {
+	display:inline-block;
+	width: 200px;
+	height: auto;
+	padding: 10px;
+	border: 1px dotted red;
+	background: yellow;
+}
+#d2{
+	height: 300px;
+	overflow : auto;
+}
+</style>
+</head>
+<body>
+<pre>
+ 0.5초에 한번씩 버튼 클릭 할때마다 5개의 랜덤값이 출력된다.
+ 규칙적인 시간간격으로 실행 : setInterval()
+</pre>
+	<input onclick="proc1()" type="button" value="실행">
+	<br/><br/>
+	<div></div><div></div><div></div><div></div><div></div>
+	<div></div><div></div><div></div><div></div><div></div>
+	<br/>
+	<input id="run" onclick="proc2(this)" type="button" value="실행">
+	<input onclick="proc3()" type="button" value="정지">
+	<br/><br/>
+	<div id="d2"></div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function proc1(){
+		out = document.getElementById('result');
+		
+		var str = "";
+		while(true){
+			//입력
+			input1 = prompt("몇단의 구구단을 출력할까?", "1 ~ 9 까지 숫자 입력해")
+			//구구단 출력
+			if(input1 == null){
+				alert("제대로된 값 입력해");
+				continue;
+			}else if(input1 == "1 ~ 9 까지 숫자 입력해"){
+				alert("ㄷㅈㄹ?");
+				continue;
+			}
+			
+			for(var i = 1; i <= 9; i++){
+				str += input1 + " * " + i + " = " + input1 * i + "<br/>"; 
+			}
+			str += "<br/>";
+			out.innerHTML = str;
+			//계속여부를 묻는다
+			input2 = confirm("계속 하냐?");
+			//if(조건)break;
+			if(!input2){
+				break;
+			}
+		}
+	}
+</script>
+<style>
+div {
+	display:inline-block;
+	width: 200px;
+	height: auto;
+	padding: 10px;
+	border: 1px dotted red;
+	background: yellow;
+}
+</style>
+</head>
+<body>
+<pre>
+	수를 입력
+	입력된 수의 구구단을 출력
+	계속여부를 묻는다
+	true, false인지 판단
+</pre>
+<button onclick="proc1()" type="button">실행</button>
+<br/><br/>
+<div id = "result"></div>
+</body>
+</html>
