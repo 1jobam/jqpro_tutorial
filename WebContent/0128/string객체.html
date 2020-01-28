@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	str = "우리나라 대한민국 좋은나라";
+	str1 = "I Love KOREA";
+	
+	function proc1(){
+		chat = str.charAt(2);
+		codeat = str.charCodeAt(2);
+		
+		at = str1.charCodeAt(5);
+		
+		res = "str.charAt(2) : " + chat + "<br/>";
+		res += "str.charCodeAt(2) : " + codeat + "<br/>";
+		res += "str1.charCodeAt(5) : " + at + "<br/>"
+		
+		document.getElementById('result1').innerHTML = res;
+	}
+	
+	function proc2(){
+		ss = str.concat(str1);
+		
+		res = "str.length : " + str.length + "<br/>";
+		res += "str1.length : " + str1.length + "<br/>";
+		res += "ss.length : " + ss.length + "<br/>";
+		res += "concat 한것  : " + ss;
+		
+		
+		document.getElementById('result2').innerHTML = res;
+		
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h2>String객체</h2>
+	<pre>
+	str = "우리나라 대한민국 좋은나라"
+	str1 = "I Love KOREA";
+	
+	문자열의 charCodeAt(인덱스)
+	str.charCodeAt(2);
+	
+	str1.charCodeAt(5);
+	</pre>
+	<button onclick="proc1()">실행</button>
+	<div id="result1"></div>	
+</div>
+
+<div class="box">
+	<h2>String 객체</h2>
+	<pre>
+	str = "우리나라 대한민국 좋은나라"
+	str1 = "I Love KOREA";
+	ss = str.concat(str1);
+	
+	res = "str.length : " + str.length;
+	res += "str1.length : " + str1.length;
+	res += "ss.length : " + ss.length;
+	</pre>
+	<button onclick="proc2()">실행</button>
+	<div id="result2"></div>	
+</div>
+</body>
+</html>

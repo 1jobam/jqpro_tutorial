@@ -7,3 +7,42 @@ pre{
 	color : white;
 	background : #bebebe;
 }
+
+.box{
+	background : #dddddd;
+	margin : 10px;
+	height: auto;
+	padding : 15px;
+}
+
+.box div{
+	border : 2px dotted orange;
+	height: auto;
+	margin : 10px;
+	padding : 10px;
+}
+
+.box button{
+	color : white;
+	background : blue;
+	padding : 5px;
+	margin : 5px;
+	width : 60px;
+	border-radius : 50px;
+}
+
+.box code{
+	padding : 15px;
+	color : blue;
+	margin : 7px;
+	background : rgb(197, 209, 222);
+	line-height: 4em;
+}
+
+.box pre{
+	padding : 15px;
+	color : blue;
+	margin : 7px;
+	background : rgb(197, 209, 222);
+	line-height: 1.5em;
+}

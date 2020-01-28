@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function proc1() {
+		arr = new Array();
+
+		while (true) {
+			//입력
+			input = prompt("입력하세요");
+
+			//조건 - break;
+			if (input == null || input == "") {
+				break;
+			}
+
+			//배열에 저장
+			arr.push(input)
+		}
+
+		document.getElementById('result1').innerHTML = arr;
+	}
+
+	function proc2() {
+		i = 0;
+		arr = new Array();
+		while (true) {
+			//입력	
+			input = prompt("정수 5개를 입력하세요", "중복없는 정수로 쓰세요");
+			//if(중복검사) - {
+			//배열에추가
+			//i증가
+			//}
+			//if(조건) break;
+			//i증가
+			idx = arr.indexOf(input);
+			
+			if(idx == -1){
+				arr.push(input);
+// 				arr[i] = input;
+				i++;
+			}else{
+				alert("중복된 값을 입력하셨습니다.")
+				continue;
+			}
+			if(i >= 5){
+				break;
+			}
+
+			//출력
+		}
+		document.getElementById('result2').innerHTML = arr;
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h2>입력받아 배열에 저장</h2>
+		<code> while(true){ //입력 input = prompt("입력하세요"); //조건 - break;
+			if(input == null || input == ""){ break; } //배열에 저장 arr.push(input) }
+			document.getElementById('result1').innerHTML = arr; </code>
+		<pre>
+		박스안의 pre테스트
+	</pre>
+		<br />
+		<button onclick="proc1()" type="button">실행</button>
+		<div id="result1"></div>
+	</div>
+
+	<div class="box">
+		<pre>
+		i = 0;
+		arr = new Array();
+		while (true) {
+			//입력	
+			input = prompt("정수 5개를 입력하세요", "중복없는 정수로 쓰세요");
+			idx = arr.indexOf(input);
+			if(idx == -1){
+				arr.push(input);
+				i++;
+			}else{
+				alert("중복된 값을 입력하셨습니다.")
+				continue;
+			}
+			if(i >= 5){
+				break;
+			}
+			//출력
+		}
+		document.getElementById('result2').innerHTML = arr;
+		</pre>
+		<h2>중복되지 않는 정수 5개 입력받아 출력</h2>
+		<br />
+		<button onclick="proc2()" type="button">실행</button>
+		<div id="result2"></div>
+	</div>
+</body>
+</html>

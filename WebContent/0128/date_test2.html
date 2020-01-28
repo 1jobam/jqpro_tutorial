@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function proc1(){
+		
+		//현재날짜, 태어난 날짜 - date객체 생성
+		today = new Date();
+		myday = new Date(1994, 10 - 1, 31);
+		
+		time = today.getTime() - myday.getTime();
+		//alert(time); 경과 띄우기.
+		sec = time / 1000;
+		min = sec / 60;
+		hour = min / 60;
+		day = hour / 24;
+		year = day / 365;
+		
+		res = "new Date() : " + today.toLocaleDateString() + "<br/>";
+		res += "new Date(1994, 10, 31) : " + myday.toLocaleDateString() + "<br/>";
+		res += "살아온 초 : " + sec + "<br/>";
+		res += "당신은 " + year + "년 살았습니다.";
+		
+		document.getElementById('result1').innerHTML = res;
+	}
+	
+	function proc2(){
+		today = new Date();
+		
+		//time = 현재의 getTime() + 100일의 getTime
+		milisec = today.getTime() + 100 * 24 * 60 * 60 * 1000;
+		//alert(milisec); 확인용
+		
+		//time으로 새로운 Date객체를 생성한다.
+		newday = new Date(milisec);
+	
+		//출력
+		document.getElementById('result2').innerHTML = newday.toLocaleString();
+	}
+	
+	function proc3(){
+		/* time = new Date();
+		input = new Date(document.getElementsByTagName('input')[0].value);
+		
+		result = time - input;
+		
+		result = result / 1000 / 60 / 60 / 24;
+		result = Math.round(result, 0);
+		
+		if(result > 7){
+			document.getElementById('result3').innerHTML = "현재 사용 기간은 : " + result + "일 입니다. <br/>교환 가능 날짜가 지났습니다. <br/>교환 가능 기간은 7일 입니다.";
+		}else{
+ 			document.getElementById('result3').innerHTML = "현재 사용 기간은 : " + result + "일 입니다. 교환이 가능하십니다.";
+		} */
+		
+		selday = document.getElementById('seldate').value;
+		selday = new Date(selday);
+		
+		today = new Date();
+		
+		day = today.getDate() - selday.getDate();
+		
+		/* time = today.getTime() - selday.getTime();
+		
+		day = time / 1000 / 60 / 60 / 24; */
+		
+		res = "구입날짜 : " + selday.toLocaleDateString() + "<br/>";
+		res += "오늘날짜 : " + today.toLocaleDateString() + "<br/>";
+		
+		if(day > 7){
+			res += "교환/반품 불가능합니다";
+		}else{
+			res += "교환/반품 가능합니다";
+		}
+		
+		document.getElementById('result3').innerHTML = res;
+// 		alert(today.toLocaleString()); 확인용 (요일이 없다는것을 확인)
+	}
+</script>
+</head>
+<body>
+<div class="box">
+	<h2>살아온 날 구하기</h2>
+	<pre>
+		today = new Date();
+		myday = new Date(1994, 10 - 1, 31);
+		
+		time = today.getTime() - myday.getTime();
+		
+		sec = time / 1000;
+		min = sec / 60;
+		hour = min / 60;
+		day = hour / 24;
+		year = day / 365;
+	</pre>
+	<button onclick="proc1()">실행</button>
+	<div id="result1"></div>	
+</div>
+
+<div class="box">
+	<h2>앞으로의 날 구하기</h2>
+	<pre>
+		현재부터 100일후의 날 구한다
+		today = new Date();
+		
+		milisec = today.getTime() + 100 * 24 * 60 * 60 * 1000;
+		
+		newday = new Date(milisec);
+	
+		document.getElementById('result2').innerHTML = newday.toLocaleString();
+	</pre>
+	<button onclick="proc2()">실행</button>
+	<div id="result2"></div>	
+</div>
+
+<div class="box">
+	<h2>교환 가능 불가능 구하기</h2>
+	<pre>
+		selday = document.getElementById('seldate').value;
+		selday = new Date(selday);
+		
+		today = new Date();
+		
+		time = today.getTime() - selday.getTime();
+		
+		day = time / 1000 / 60 / 60 / 24;
+	</pre>
+	구입날짜 : <input id="seldate" type="date">
+	<button onclick="proc3()">실행</button>
+	<div id="result3"></div>	
+</div>
+</body>
+</html>
