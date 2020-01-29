@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function proc1(){
+		/* str = "";
+		input = prompt("주민등록번호를 입력하세요.", "ex)123456-1234567");
+		
+		a = input.substr(0,2);
+		b = input.substr(2,4);
+		c = input.substr(4,6);
+		d = input.charAt(7);
+		
+		if(d == '1' || d == '3'){
+			str += "생일 : " + "<br/>" ;
+			str += "성별 : 남성";
+			str += "나이 : " + "살";
+		}else if(d == '2' || d == '4'){
+			str += "생일 : " + "<br/>" ;
+			str += "성별 : 여성    ";
+			str += "나이 : " + "살";
+		}
+		
+		document.getElementById('result1').innerHTML = str; */
+		
+		//입력
+		numvalue = prompt("주민번호입력", "110326-4123456");
+		
+		//각 해당 문자열 추출
+		ny = numvalue.substr(0,2);
+		nm = numvalue.substr(2,2);
+		nd = numvalue.substr(4,2);
+		ng = numvalue.substr(7,1);
+		
+		//정리
+		if(ng == '1' || ng == '2'){
+			year = "19" + ny;
+		}else{
+			year = "20" + ny;
+		}
+		
+		year = parseInt(year);
+		
+		if(ng == '1' || ng == '3'){
+			gender = "남자";
+		}else{
+			gender = "여자";
+		}
+		
+		now = new Date();
+		
+		age = now.getFullYear() - year;
+		
+		res = "입력 : " + numvalue + "<br/>";
+		res += "생년월일 : " + year + "년 " + nm + "월 " + nd + "일 " + "<br/>";
+		res += "성별 : " + gender + "<br/>";
+		res += "나이 : " + age;
+		
+		document.getElementById('result1').innerHTML = res;
+	
+	}
+	
+	function proc2(){
+		input = prompt("주민번호입력", "110326-4123456");
+		su = "234567892345";
+		
+		aa = input.split("-"); //배열리턴 avalue[0] = 110326, avalue[1] = 4123456;
+		
+		avalue = aa[0].concat(aa[1]); //avalue = "1103264123456"; 가 된다.
+		
+		sum = 0;
+		for(var i = 0; i <= su.length; i++){
+			sum += avalue.substr(i, 1) * su.substr(i, 1);
+		}
+		
+		rvalue = 11 - sum % 11;
+		
+		/* if(rvalue == 10){
+			rvalue = 0;
+		}else if(rvalue == 11){
+			rvalue = 1;
+		} */
+		//위와 동일
+		rvalue = rvalue % 10;
+		
+		a = avalue[1].substr(0, 1);
+		res = "입력 : " + aa[0] + "-" + aa[1].slice(0, 1) + "******" + "<br/>";
+		
+		if(avalue.substr(12, 1) == rvalue){
+			res += "정상처리 되었습니다.";
+		}else{
+			res += "입력오류 입니다.";
+		}
+		
+		document.getElementById('result2').innerHTML = res;
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h2>문제 1).</h2>
+	<pre>
+	주민등록번호를 입력 받아 생년월일과 성별을 출력하는 프로그램을 작성하시오.(입력은 prompt로 입력받는다.)
+	예) 주민등록번호를 110326-4432618로 입력 받은 경우
+	생일 : 2011년 3월 26일
+	성별 : 여자  나이: ?살
+	</pre>
+	<button onclick="proc1()">실행</button>
+	<div id="result1"></div>	
+</div>
+
+<div class="box">
+	<h2>문제 2).</h2>
+	<pre>
+	주민등록번호를 입력 받아 주민등록번호의 유효성을 검사하는 프로그램을 작성하시오.(ABCDEF-GHIJKLM)
+	A*2 + B*3 + ... + H*9 + I*2 + ... + L*5 의 총합을 구한다.
+	1번의 합을 11로 나눈 나머지를 구한다.
+	11에서 2번의 결과를 뺀다.
+	3번의 결과가 0~9이면 값 그대로, 10이면 0, 11이면 1로 변환
+	4번의 결과와 M자리의 값이 같으면 맞는 번호이다.
+	</pre>
+	<button onclick="proc2()">실행</button>
+	<div id="result2"></div>	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+
+	str = "I Love Korea 대한민국 만세";
+	
+	function proc1() {
+		avalue = document.getElementById('area').value;
+		
+		avalue = avalue.replace(/\r/g, "<br/>").replace(/\n/g, "<br/>");
+		
+		document.getElementById('result1').innerHTML = avalue;
+	}
+	
+	function proc2(){
+		svalue = str.substring(7, 12);
+		
+		res = " str.substring(7, 12) : " + svalue;
+		
+		document.getElementById('result2').textContent = res;
+	}
+	
+	function proc3(){
+		svalue = str.slice(13, 17);
+		
+		res = " str.slice(13, 17) : " + svalue;
+		
+		document.getElementById('result3').textContent = res;
+	}
+	
+	function proc4(){
+		svalue = str.substr(2, 4);
+		
+		res = " str.substr(2, 4) : " + svalue;
+		
+		document.getElementById('result4').textContent = res;
+	}
+	
+	function proc5(){
+		svalue = str.split(" ");
+		res = ' str.split(" ") : <br/> '; 
+		
+		for(var i = 0; i < svalue.length; i++){
+			res += i + "번째 " + svalue[i] + "<br/>";
+		}
+		
+		document.getElementById('result5').innerHTML = res;
+	}
+	
+	function proc6(){
+		svalue = str.charAt(7);
+		
+		res = " str.charAt(7) : " + svalue;
+		
+		document.getElementById('result6').textContent = res;
+	}
+	
+	function proc7(){
+		str2 = " 대한민국 우리나라 좋은 나라  ";
+	
+		res = "str2.length : " + str2.length + "<br/>";
+		
+		str2 = str2.trim();
+		
+		res += "str2.trim() : " + str2.length + "<br/>";
+		
+		document.getElementById('result7').innerHTML = res;
+		
+	}
+	
+	function proc8(){
+		namevalue = document.getElementById('name').value;
+		
+		namevalue = namevalue.trim();
+		
+		if(namevalue.length == 0){
+			alert("이름을 입력하세요");
+			return false;
+		}
+		
+		alert("입력값은=" + namevalue + "입니다.");
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h2>String 객체</h2>
+		str = "I Love Korea 대한민국 만세"
+		str2 = " 대한민국 우리나라 좋은 나라  "
+		<pre>
+		- replace(old, new)		: 문자열 변경
+	</pre>
+		<textarea rows="10" cols="40" id="area"></textarea>
+		<button onclick="proc1()">replace</button>
+		<p>avalue.replace(/\r/g, "&lt;br/&gt;").replace(/\n/g, "&lt;br/&gt;");</p>
+		<div id="result1"></div>
+	</div>
+	
+	<div class="box">
+		<h2>String 객체</h2>
+		str = "I Love Korea 대한민국 만세"
+		<pre>
+		- substring(from, to)	: from ~ to-1 까지 추출
+		- slice(from, to)		: from ~ to-1 까지 자르기
+		- substr(from, length)	: length(갯수)만큼 추출
+		</pre>
+		<button onclick="proc2()">substring</button>
+		<button onclick="proc3()">slice</button>
+		<button onclick="proc4()">substr</button>
+		<div id="result2"></div>
+		<div id="result3"></div>
+		<div id="result4"></div>
+	</div>
+	
+	<div class="box">
+		<h2>String 객체</h2>
+		str = "I Love Korea 대한민국 만세"
+		<pre>
+		- split(구분자)			: 구분자를 기준으로 문자열 분리, 배열로 리턴
+		- charAt(index)			: index번째에 있는 문자를 리턴
+		- trim() 			: 문자열의 앞뒤 공백 제거
+		</pre>
+		<button onclick="proc5()">split</button>
+		<button onclick="proc6()">charAt</button>
+		<button onclick="proc7()">trim</button>
+		<div id="result5"></div>
+		<div id="result6"></div>
+		<div id="result7"></div>
+		
+		입력후 버튼을 클릭하면 입력데이터의 공백을 제거한다.<br/>
+		<input type="text" id="name"/>
+		<button onclick="proc8()" type="button">공백체크</button>
+	</div>
+	
+</body>
+</html>
