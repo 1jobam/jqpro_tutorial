@@ -40,10 +40,10 @@ pre{
 }
 
 .box pre{
-	padding : 15px;
+	padding : 10px;
 	color : blue;
-	margin : 7px;
+	margin : 5px;
 	background : rgb(197, 209, 222);
-	line-height: 1.5em;
+	line-height: 1.2em;
 	font-size : 1.1em;
 }

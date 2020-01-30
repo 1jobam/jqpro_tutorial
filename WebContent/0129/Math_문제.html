@@ -8,7 +8,7 @@
 	function proc1() {
 		//난수발생 1 ~ 10
 		rand = Math.floor(Math.random() * 10 + 1);
-
+		
 		count = 0;
 		res = "랜덤값 : " + rand + "<br/>";
 		res += "입력값 : " + "<br/>";
@@ -31,7 +31,7 @@
 			}
 
 		}
-
+		
 		document.getElementById('result1').innerHTML = res + "시도횟수 : " + count;
 	}
 
@@ -92,23 +92,41 @@
 		document.getElementById('result3').innerHTML = str;
 
 	}
+	
+		//난수발생 1~10
+		rand = Math.floor(Math.random()*10 + 1);
+	function procText(){
+		
+		//입력 값 가져오기
+		invalue = document.getElementById('insu').value;
+		res = "입력값 : " + invalue + "<br/>";
+		
+		result = document.getElementById('result1');
+		
+		if(rand > invalue) result.innerHTML = "더 크게";
+		else if(rand < invalue) result.innerHTML = "더 작게";
+		else result.innerHTML = "정답.";
+	}
 </script>
 </head>
 <body>
 
 	<div class="box">
-		<h2>Math 객체</h2>
+		<h2>Math 객체 1</h2>
 		<pre>
 	1 ~ 10 사이의 난수를 발생 후 사용자가 이 값을 맞추는 프로그램을 작성하시오.
 	입력값에 따라 더크게, 더작게 힌트를 준다
 	몇번만에 맞췄는지 횟수를 카운트 한다.
 	</pre>
-		<button onclick="proc1()">실행</button>
+		<input type="text" id="insu">
+		<button onclick="procText()">실행input</button>
+		
+		<button onclick="proc1()">실행random</button>
 		<div id="result1"></div>
 	</div>
 
 	<div class="box">
-		<h2>Math 객체</h2>
+		<h2>Math 객체 2</h2>
 		<pre>
 	가위 바위 보 게임을 할 수 있는 프로그램을 작성하시오. 
 	(단, 컴퓨터는 랜덤을 이용하고, 사용자는 prompt로 입력 받아서 처리)
@@ -119,7 +137,7 @@
 	</div>
 
 	<div class="box">
-		<h2>Math 객체</h2>
+		<h2>Math 객체 3</h2>
 		<pre>
 	로또 번호를 생성하는 프로그램을 작성하시오.
 	(1번 ~ 45번 중 6개의 번호를 추첨)

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function proc1(){
+		//http://localhost:80/jqpro/0130/test.html?id="korea" <- 쿼리스트링 get방식 서버로 전송시 
+		res = "href : " + location.href + "<br/>";
+		res += "protocol : " + location.protocol + "<br/>";
+		res += "host : " + location.host + "<br/>";
+		res += "hostname : " + location.hostname + "<br/>";
+		res += "port : " + location.port + "<br/>";
+		res += "pathname : " + location.pathname + "<br/>";
+		
+		document.getElementById("result1").innerHTML = res;
+	}
+	
+	function proc2(){
+		
+		location.href = "test.jsp";
+	}
+	
+	function goPage(){
+		location.href = "test.jsp";
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h2> Location 객체 </h2>
+	<pre>
+	url의 정보를 얻는다
+	href : 전체 url
+	protocol :   
+	host : hostname 과 port 가 합쳐진 것
+	hostname : 
+	port : 
+	pathname :
+	</pre>
+	<button type="button" onclick="proc1()">실행</button>
+	<div id="result1"></div>	
+</div>
+
+<div class="box">
+	<h2> Location 객체 </h2>
+	<pre>
+	- location 객체의 사용
+	1. 자동으로 특정페이지로 이동 할때 사용
+	2. a태그이용
+	3. 이벤트(get)
+	4. 이벤트(post)
+	5. 새로운 문서로 대체
+	6. 현재 문서를 다시 로드 할때
+	</pre>
+	- 1번(자동으로 특정페이지로 이동 할때 사용)
+	<button type="button" onclick="proc2()">자동으로 이동</button>
+	<br/>
+	
+	- 2번(a태그 이용)
+	<a href="javascript:goPage()">a태그-이동</a>
+	<br/>
+	
+	- 3번(이벤트 get)
+	<button type="button" onclick="goPage()">get</button>
+	<br/>
+	
+	-4번(이벤트 post)
+	<form name="myform">
+		<input type="hidden" name="abc" value="korea">
+		<button type="button" onclick="gopagePost()">post</button>
+	</form>
+	<br/>
+	
+	-5번(새로운 문서로 대체 : 원래페이지로 돌아올 수 없음)
+	<button type="button" onclick="goReplace()">대체</button>
+	<br/>
+	
+	-6번(현재 문서를 다시로드)
+	<button type="button" onclick="goReload">다시로드</button>	
+	<div id="result2"></div>	
+</div>
+
+</body>
+</html>
