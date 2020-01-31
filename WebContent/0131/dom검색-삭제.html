@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function proc1(){
+		
+		//p태그생성
+		ptag = document.createElement('p');
+		
+		//랜덤을 이용한 text생성
+		arr = ["Hello", "Happy", "맜있는 점심.", "JavaScript", "HTML", "CSS", "JQuery"];
+		rand = Math.floor(Math.random() * arr.length);
+		
+		// text를 p태그에 추가
+		txt = document.createTextNode(arr[rand]);		
+		ptag.appendChild(txt);
+		
+		//div에 p태그 추가
+		document.getElementById('result1').appendChild(ptag);
+		
+	}
+	
+	function proc2(){
+		//부모 div 검색 접근 , 마지막 자식 검색
+		paren = document.getElementById('result1');
+		
+		//마지막 자식검색
+		child = paren.lastChild;
+		
+		//삭제한다
+		if(paren.removeChild(child)){
+			alert("삭제완료");
+		}
+		
+	}
+	
+	function proc3() {
+		//p태그생성
+		ptag = document.createElement('p');
+		
+		//랜덤을 이용한 text생성
+		arr = ["HTML", "JQuery", "JAVA", "Jsp", "SQL", "CSS"];
+		rand = Math.floor(Math.random() * arr.length);
+		txt = document.createTextNode(arr[rand]);
+		
+		//새로운 버튼을 추가
+		btn = document.createElement('button');
+		btn.innerHTML = "삭제";
+		btn.onclick = function(){
+			
+			//div에서 버튼의 부모요소(parent)를 찾는다
+			
+			//찾은요소를 삭제 한다.	
+		}
+		
+		//text와 새로운 버튼(삭제)을 p태그에 추가
+		ptag.appendChild(txt);
+		ptag.appendChild(btn);
+		
+		//p태그를 div에 추가
+		document.getElementById('result2').appendChild(ptag);
+		
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h2> dom 검색 - 추가 / 삭제</h2>
+	<pre>
+	- 추가버튼 클릭시
+		p태그생성
+		랜덤을 이용한 text생성
+			text를 p태그에 추가
+		p태그를 div에 추가
+	- 삭제버튼 클릭시
+		div에서 마지막 자식요소(lastChild)를 삭제 한다.
+	</pre>
+	<button type="button" onclick="proc1()">추가</button>
+	<button type="button" onclick="proc2()">삭제</button>
+	<div id="result1"></div>	
+</div>
+
+<div class="box">
+	<h2> dom 검색 - 추가 / 삭제</h2>
+	<pre>
+	추가버튼 클릭시
+		p태그생성
+		랜덤을 이용한 text생성
+		새로운 버튼 추가
+		text와 새로운 버튼(삭제)을 p태그에 추가
+		p태그를 div에 추가
+	삭제버튼 클릭시
+		div에서 버튼의 부모요소(parent)를 찾는다
+		찾은요소를 삭제 한다.
+	</pre>
+	<button type="button" onclick="proc3()">추가/삭제</button>
+	<div id="result2"></div>
+</div>
+</body>
+</html>

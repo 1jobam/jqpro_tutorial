@@ -25,6 +25,40 @@
 	function goPage(){
 		location.href = "test.jsp";
 	}
+	
+	function gopagePost(){
+		// 입력한값(hidden값)을 서버프로그램으로 보낸다
+		mf = document.myform;
+		
+		mf.action = "testpost.jsp";
+		mf.method = "post";
+		mf.submit();
+	}
+	
+	function goReplace(){
+		location.replace("test.jsp");
+		
+	}
+	
+	function goReload(){
+		str = ["Hello", "HTML", "CSS", "JAVASCRIPT", "JSP", "JQuery"];
+		
+		rand = Math.floor(Math.random() * str.length);
+		res = "<h1>" + str[rand] + "</h1>";
+		
+		result = document.getElementById('result2');
+		
+		result.innerHTML = res;
+		result.style.color = "red";
+		
+		console.log = res;
+		
+		setTimeout(function(){
+			location.reload();
+		}, 1000);
+		
+// 		location.reload("location_test.html");
+	}
 </script>
 </head>
 <body>
@@ -34,7 +68,7 @@
 	<pre>
 	url의 정보를 얻는다
 	href : 전체 url
-	protocol :   
+	protocol : 
 	host : hostname 과 port 가 합쳐진 것
 	hostname : 
 	port : 
@@ -79,7 +113,7 @@
 	<br/>
 	
 	-6번(현재 문서를 다시로드)
-	<button type="button" onclick="goReload">다시로드</button>	
+	<button type="button" onclick="goReload()">다시로드</button>	
 	<div id="result2"></div>	
 </div>
 

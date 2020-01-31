@@ -6,19 +6,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-
-	function historyGo(a){
+	function gogo(a){
 		history.go(a);
 	}
 </script>
 </head>
 <body>
-<h1>JSP</h1>
-<h2>Java Server Page</h2>
+<%
+	//클라이언트 요청시 입력값과 hidden값을 가져온다.
+	String namevalue = request.getParameter("abc");
+%>
+<h1><%= namevalue %>님 환영합니다.</h1>
 <br/>
-뒤로 되돌아가기
-<br/>
-<!-- <a href = "location_test.html" onclick="go()">go</a> -->
-<a href="#" onclick="historyGo(-1)">go</a>
+<a href="#" onclick="gogo(-1)">뒤로</a>
 </body>
 </html>
