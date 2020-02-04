@@ -52,8 +52,11 @@
 		btn.onclick = function(){
 			
 			//div에서 버튼의 부모요소(parent)를 찾는다
+			child = this.parentNode; //p태크 - 버튼의 부모 이자 div의 자식
+			//찾은요소를 삭제 한다.
+			parent = document.getElementById('result2');
 			
-			//찾은요소를 삭제 한다.	
+			parent.removeChild(child);
 		}
 		
 		//text와 새로운 버튼(삭제)을 p태그에 추가

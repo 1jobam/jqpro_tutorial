@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	window.onload = function(){
+		f = document.ff;
+	}
+	
+	function proc1(){
+		
+		idx = f.sel.selectedIndex;
+		
+		opt = f.sel.options[idx].value;
+		
+		str = "";
+		for(i = 1; i < 10; i++){
+			str += opt + " * " + i + " = " + (opt * i) + "<br/>";
+		}
+		
+		document.getElementById('result1').innerHTML = str;
+	}
+</script>
+<style type="text/css">
+	.box{
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+
+<div class="box">
+<form name="ff">
+	<select name = "sel">
+		<option value="2">2단</option>
+		<option value="3">3단</option>
+		<option value="4">4단</option>
+		<option value="5">5단</option>
+		<option value="6">6단</option>
+		<option value="7">7단</option>
+		<option value="8">8단</option>
+		<option value="9">9단</option>
+	</select>
+	<button type="button" onclick="proc1()">출력</button>
+	<h2>결과 출력</h2>
+	<div id="result1"></div>
+</form>	
+</div>
+</body>
+</html>

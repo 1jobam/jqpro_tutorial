@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	
+	window.onload = function(){
+	vex = document.getElementById('ex');
+	}
+	
+	function get(){
+		alert(vex.innerHTML);
+	}
+	
+	function set(txt){
+		vex.innerHTML = txt;
+	}
+	
+	function change(){
+		//img요소 접근 방법
+		/* 1. id를 이용한 방법
+		document.getElementById('cafe');
+		2. name을 이용한 방법
+		document.getElementsByName('cafe')[0];
+		3. tagname을 이용한 방법
+		document.getElementsByTagName('img')[0]; */
+		
+		a = document.cafe.src = "../images/coffee1.jpg";
+		
+	}
+	
+	function intervalchange(){
+		//이미지를 배열로 생성
+		arrimg = ["../images/cappuccino.jpg", "../images/핫초코.jpg", "../images/아메리카노.jpg", "../images/에스프레소.jpg"];
+		
+		//랜덤을 발생
+		//이미지의[랜덤] 번째로 변경 0.5초 마다 변경
+		
+		imgstop = setInterval(function(){
+			rand = Math.floor(Math.random() * arrimg.length);
+			imgrand = arrimg[rand];
+			document.cafe.src = imgrand;
+		}, 500);
+
+		document.getElementById('imgbtnstart').style.display = 'none';
+		document.getElementById('imgbtnstop').style.display = 'inline';
+	}
+	
+	function stopchange(){
+		clearInterval(imgstop);
+		
+		document.getElementById('imgbtnstart').style.display = 'inline';
+		document.getElementById('imgbtnstop').style.display = 'none';
+	}
+</script>
+<style>
+	img{
+		width:150px;
+		height:100px;
+		border-radius:100%;
+	}
+	
+	#imgbtnstop{
+		display: none;
+	}
+</style>
+</head>
+<body>
+
+<div class="box">
+	<h2> html 요소 변경 </h2>
+	<pre>
+		innerHTML 을 이용해서 div(id = ex)요소를 변경
+		innerHTML 을 이용해서 a태그의 내용을 가져온다.
+	</pre>
+	<div id="ex">무궁화 꽃이 피었습니다</div>
+	<a href="#" onclick="get()">div 요소 내용 가져오기</a><br>
+    <a href="#" onclick="set('장미꽃이 피었습니다')">div 요소 내용 변경하기</a>
+</div>
+
+<div class="box">
+	<h2> html 요소 속성 변경 </h2>
+	<pre>
+		이미지의 src속성을 변경해서 이미지를 바꾼다.
+	</pre>
+	<img name = "cafe" id = "cafe" src = "../images/cafelatte.jpg" alt = "카페라떼"/>
+	<button type="button" onclick="change()">실행</button>
+	<button id="imgbtnstart" type="button" onclick="intervalchange()">시간간격실행</button>
+	<button id="imgbtnstop" type="button" onclick="stopchange()">멈춤</button>
+</div>
+
+</body>
+</html>

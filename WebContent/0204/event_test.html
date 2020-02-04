@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function changeColor(c){
+		
+		result = document.getElementById('result1');
+		
+		result.style.background = c;
+		
+	}
+	function loadProc(){
+		document.body.style.background="black";
+		f = document.ff;
+	}
+	
+	function nameProc(){
+		
+		// 입력한 값 가져오기
+		namevalue = f.name.value;
+		
+		//한글자씩 대소문자 변경
+		val = "";
+		for(i = 0; i < namevalue.trim().length; i++){
+			
+			if(namevalue.substr(i, 1) >= "A" && namevalue.substr(i, 1) <= "Z"){
+				val += namevalue.substr(i, 1).toLowerCase();
+				
+			}else if(namevalue.substr(i, 1) >= "a" && namevalue.substr(i, 1) <= "z"){
+				val += namevalue.substr(i, 1).toUpperCase();
+			}
+			
+		}
+
+		f.name.value = val;
+		
+		//한꺼번에 대소문자 변경
+		
+// 		if(namevalue.substr(i, 1) >= "A" && namevalue.substr(i, 1) <= "Z"){
+// 			val = namevalue.substr(i, 1).toLowerCase();
+			
+// 		}else if(namevalue.substr(i, 1) >= "a" && namevalue.substr(i, 1) <= "z"){
+// 			val = namevalue.substr(i, 1).toUpperCase();
+// 		}
+		
+// 		f.name.value = val;
+		
+	}
+	
+	function selProc(){
+		
+	}
+	
+</script>
+</head>
+<body onload="loadProc()">
+
+<div class="box">
+	<h2> </h2>
+	<pre>
+	body onload="loadProc()"와
+	window.onload=function()가
+	
+	onload이벤트가 동시에 있을때
+	window.onload는 무시된다.
+	</pre>
+	<input name="color" type="radio" onclick="changeColor('lightblue')"/>파랑
+	<input name="color" type="radio" onclick="changeColor('lightgreen')">녹색
+	<div id="result1"></div>
+	<form name="ff">
+	이름 : <input type="text" name="name" onchange="nameProc()"/>
+	&nbsp;&nbsp;&nbsp;
+	선택 : <select name="sel" onchange="selProc()">
+		<option value='봄' selected>봄</option>
+		<option value='여름'>여름</option>
+		<option value='가을'>가을</option>
+		<option value='겨울'>겨울</option>
+	</select>
+	</form>
+</div>
+</body>
+</html>
