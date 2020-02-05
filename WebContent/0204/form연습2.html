@@ -12,6 +12,7 @@
 
 	function addProc(){
 
+		if(window.event.keyCode == 13 || window.event.target.tagName == "button"){
 		// 입력한 data값을 가져온다 - value;
 		datavalue = f.data.value;
 		
@@ -35,6 +36,7 @@
 		f.data.value = "";
 		//커서는 입력 요소에 둔다.
 		f.data.focus();
+		}
 	}
 	
 	function toRight(){
@@ -160,11 +162,20 @@
 <div class="box">
 	<h2> </h2>
 	<pre>
+	form 안에 input type=text인 요소가 하나가 있을때
+	input요소에서 엔터를 치면 자동 submit이 수행된다
+	
+	자동 submit이 수행되지 않도록 하기 위해서
+	form태그 안에 onsubmit=return false;를 기술해준다.
+	
+	button태그는 자동 submit이 수행된다.
+	button에서 자동 submit이 수행되지 않도록 하기 위해서
+	button type="button"으로 기술한다.
 	</pre>
 
 	<div id="result1">
-	<form name="ff">
-	<table>
+	<form name="ff" onsubmit="return false;">
+	<table border=1>
 	<tr>
 		<th colspan="3">select객체 예제</th>
 	</tr>
@@ -188,8 +199,8 @@
 	</tr>
 	<tr>
 		<td id = "td3" colspan="3">
-		<input name="data" type="text"/>
-		<input onclick="addProc()" type="button" value="추가하기"/>
+		<input name="data" type="text" onkeyup="addProc()"/>
+		<button name="name" onclick="addProc()" type="button">추가하기</button>
 		</td>
 	</tr>
 	</table>

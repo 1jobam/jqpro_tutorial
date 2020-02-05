@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script type="text/javascript">
+	function proc1(){
+		document.getElementsByTagName('div')[1].style.display = "block";
+	}
+</script>
+<style type="text/css">
+	label{
+		display: inline-block;
+		width : 110px;
+	}
+	
+	.box div{
+		display: none;
+		width: auto;
+	}
+	fieldset{
+		width:350px;
+		line-height: 30px;
+	}
+</style>
+</head>
+<body>
+
+<div class="box">
+	<h2> </h2>
+	<pre>
+
+	</pre>
+	<button type="button" onclick="proc1()">실행</button>
+	<div id="result1">
+		<form>
+			<fieldset>
+				<legend>회원정보입력</legend>
+				<label>아이디</label>
+				<input type="text" name="id"><br/>
+				<label>패스워드</label>
+				<input type="password" name="password1"><br/>
+				<label>패스워드 확인</label>
+				<input type="password" name="password2"><br/>
+				<label>이름</label>
+				<input type="text" name="name"><br/>
+				<label>성별</label>
+				<input type="radio" name="gender" checked> 남자
+				<input type="radio" name="gender"> 여자<br/>
+				<label>휴대폰 번호</label>
+				<input type="number" name="number"><br/>
+				<label>이메일</label>
+				<input type="email" name="email"><br/>
+			</fieldset>
+			<input type="button" value="제출">
+			<input type="reset" value="초기화">
+		</form>
+	</div>
+</div>
+</body>
+</html>
