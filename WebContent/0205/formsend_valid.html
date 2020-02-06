@@ -4,59 +4,62 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../css/mystyle.css">
-<script type="text/javascript">
-	function proc1(){
-		document.getElementsByTagName('div')[1].style.display = "block";
-	}
-</script>
+<script type="text/javascript" src="../js/formsend_vaild.js"></script>
 <style type="text/css">
 	label{
 		display: inline-block;
 		width : 110px;
 	}
 	
-	.box div{
-		display: none;
-		width: auto;
-	}
 	fieldset{
 		width:350px;
 		line-height: 30px;
 	}
 </style>
+<script type="text/javascript">
+	function proc1(){
+		if(sendProc()){
+			res = "제출  성공했습니다";
+			document.getElementById('result2').innerHTML = res;
+			document.getElementById('result2').style.color = "red";
+			document.getElementById('result2').fontSize = "1.5em";
+		}
+	}
+</script>
 </head>
 <body>
 
 <div class="box">
-	<h2> </h2>
+	<h2> 데이타 유효성 검증</h2>
 	<pre>
 
 	</pre>
-	<button type="button" onclick="proc1()">실행</button>
 	<div id="result1">
-		<form>
+		<form name="ff">
 			<fieldset>
 				<legend>회원정보입력</legend>
 				<label>아이디</label>
 				<input type="text" name="id"><br/>
 				<label>패스워드</label>
-				<input type="password" name="password1"><br/>
+				<input type="password" name="pass"><br/>
 				<label>패스워드 확인</label>
-				<input type="password" name="password2"><br/>
+				<input type="password" name="pass2"><br/>
 				<label>이름</label>
 				<input type="text" name="name"><br/>
 				<label>성별</label>
 				<input type="radio" name="gender" checked> 남자
 				<input type="radio" name="gender"> 여자<br/>
 				<label>휴대폰 번호</label>
-				<input type="number" name="number"><br/>
+				<input type="text" name="tel"><br/>
 				<label>이메일</label>
-				<input type="email" name="email"><br/>
+				<input type="text" name="mail"><br/>
 			</fieldset>
-			<input type="button" value="제출">
+			<input onclick="proc1()" type="button" value="제출">
 			<input type="reset" value="초기화">
 		</form>
 	</div>
+	
+	<div id="result2"></div>
 </div>
 </body>
 </html>
