@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	//$(document).ready(function(){
+		
+	$(function(){ // 문서가(dom)이 로드될때와 동일하다 (콜백함수)
+		$('h1').on('click',function(){
+			//콜백함수 : 이름없이 버튼클릭에 의해 자동 호출 된다
+			$(this).hide();
+		
+			//보이는 h1이 없느냐?	
+			if($('h1:visible').length == 0){
+// 				$('#btn1').css('display', 'block');
+				$('#btn1').show();
+			}
+		})
+		
+		//버튼을 클릭하면
+		//$('#btn1').click(function(){}) 으로도 사용가능
+		$('#btn1').on('click', function(){
+			$('h1').show();
+			$(this).hide();
+		})
+	})
+</script>
+<style>
+	#btn1{
+		display	:none;
+	}
+</style>
+</head>
+<body>
+
+<div class="box">
+	<h1>클릭하면 사라집니다1</h1>
+	<h1>클릭하면 사라집니다2</h1>
+	<h1>클릭하면 사라집니다3</h1>
+	<h1>클릭하면 사라집니다4</h1>
+	<h1>클릭하면 사라집니다5</h1>
+	<h1>클릭하면 사라집니다6</h1>
+	<h1>클릭하면 사라집니다7</h1>
+	<h1>클릭하면 사라집니다8</h1>
+	<h1>클릭하면 사라집니다9</h1>
+	<h1>클릭하면 사라집니다10</h1>
+</div>
+	<button id="btn1" type="button">실행</button>
+</body>
+</html>

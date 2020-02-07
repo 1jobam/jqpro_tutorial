@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+// javascript 방식
+// 	window.onload=function(){
+// 		result = document.getElementById('result1');
+//		result.innerHTML = "<h1>Hello</h1>";
+//		result.style.color = "red";
+// 		but =	 document.getElementsByTagName('button')[0];
+// 	}
+
+// jQuery 방식 -> jQuery라는 글자되신 $로 정의되어있어 $로 사용하면된다.
+	$(document).ready(function(){
+		//여러개의 버튼이 있을경우 :eq(인덱스) 를 사용하면된다.
+		// but = $('button:eq(0)')
+		// but.function(){}
+	
+		$('button:eq(0)').on('click', function(){
+			
+			result = $('#result1');
+			result.html("<h1>Hello jQuery</h1>");
+			result.css('color', 'red');
+			
+		})
+	})
+	
+	function proc1(){
+	
+		result = $('#result1');
+		result.html("<h1>Hello proc</h1>");
+		result.css('color', 'blue');
+	
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h2> </h2>
+	<pre>
+
+	</pre>
+	<button type="button">실행jQuery</button>
+	<button onclick="proc1()" type="button">실행proc</button>
+	<div id="result1"></div>	
+</div>
+</body>
+</html>
