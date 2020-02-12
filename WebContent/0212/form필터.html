@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+
+	$(function(){
+		
+		$('#btn1').on('click',function(){
+			$('form :enabled').css('border','2px solid lime');
+			$('form :disabled').css('border', '2px solid blue');
+		})
+		
+		$('#btn2').on('click',function(){
+			//이미지의 상태값 가져오기
+// 			$('input[type=image]')
+			imgst = $(':image').prop('disabled');
+			// true이면 사용불가능, false이면 사용가능
+			//가져온 값을 반대로 설정 - set
+			imgst = !imgst;
+			cha = $(':image').prop('disabled', imgst);
+			console.log(imgst);
+			
+			selst = $('#sel').prop('disabled');
+			selst = !selst;
+			$('#sel').prop('disabled', selst);
+			
+			passst = $('#pass').prop('disabled');
+			passst = !passst;
+			$('#pass').prop('disabled',passst);
+			
+		})
+		
+	})
+
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h2> </h2>
+	<pre>
+	:enabled : 사용가능, 접근가능, 실행가능
+	:disabled : 사용불가능, 접근불가능, 실행불가능
+	
+	$('form :enabled').css('border','2px solid lime');
+	$('form :disabled').css('border', '2px solid blue');
+	
+	상태값 가져오기
+	prop('상태속성이름') : true 또는 false를 리턴한단
+	
+	상태값 변경
+	prop('상태속성이름', true) : 해당 상태를 설정
+	prop('상태속성이름', false) : 해당 상태를 해제
+	
+	prop('disabled', true) : 사용불가능으로 변경
+	prop('disabled', false) : 사용가능으로 변경 - enabled를 사용하지 않는다
+	</pre>
+	<form action="../0211/formtest.jsp" method="post">
+	<input type="button" name="disButton" value="Input Button" disabled><br>
+	<input type="checkbox" name="enCheckbox" >체크<br>
+	<input type="file" name="disFile"  ><br>
+	<input type="hidden" name="enHidden"  value=“”> <br>
+	<input type="image" src="../images/image.1.jpg" alt="Submit" disabled><br>
+	<input type="password" id="pass" value="1111" name="enPassword" disabled > <br>
+	<input type="radio" name="disRadio"  value="남" disabled> 남<br>
+	<input type="reset" name="enReset" value="취소"><br>
+	<input type="submit" name="disSubmit" value="제출" disabled> <br>
+	<input type="text" name="enText" value="input text"  > <br>
+	
+	<select id='sel' name="disSelect" disabled>
+	<option>Option1</option>
+	<option>Option2</option>
+	<option>Option3</option>
+	<option>Option4</option>
+	</select><br>
+	
+	<textarea name="enTextarea" rows=10 cols=20 >text</textarea><br>
+	
+	<button name="disButton2" onclick="javascript:alert('aaaaa');">Button</button><br>
+	</form>	
+	
+	<button id="btn1" type="button">실행</button>
+	<button id="btn2" type="button">변경</button>
+</div>
+</body>
+</html>

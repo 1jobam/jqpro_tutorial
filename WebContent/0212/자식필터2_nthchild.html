@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+
+	$(function(){
+		
+		$('#btn1').on('click',function(){
+			$('.tab1 td:first-child').css('background', 'darkgray');
+			$('.tab1 td:nth-child(2)').css('background', 'silver');
+			$('.tab1 td:last-child').css('background', 'gold');
+		})
+		
+		$('#btn2').on('click',function(){
+			$('.tab2 td:first-child').css('background', 'darkgray');
+			$('.tab2 td:nth-child(2)').css('background', 'silver');
+			$('.tab2 td:last-child').css('background', 'gold');
+			
+			$('tr:first-child td').css({
+				'background' : 'black',
+				'color' : 'white'
+			});
+		})
+
+	})
+
+</script>
+<style type="text/css">
+	td{
+		width: 150px;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+
+<div class="box">
+	<h2> </h2>
+	<pre>
+	:nth_child(인덱스)
+	:nth_child(even/odd) 를하면 홀수 또는 짝수
+	:nth_child(수식) :nth_child(2n-1)
+	</pre>
+	<table class="tab1">
+		<tr>
+			<td>이름</td>
+			<td>주소</td>
+			<td>전화번호</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>대전</td>
+			<td>010-222-333</td>
+		</tr>
+		<tr>
+			<td>진달래</td>
+			<td>서울</td>
+			<td>010-444-555</td>
+		</tr>
+		<tr>
+			<td>개나리</td>
+			<td>부산</td>
+			<td>010-777-888</td>
+		</tr>
+		<tr>
+			<td>무궁화</td>
+			<td>대구</td>
+			<td>010-555-999</td>
+		</tr>
+	</table>
+	<button id="btn1" type="button">실행</button>
+	
+	<table class='tab2'>
+		<tr>
+			<td>이름</td>
+			<td>주소</td>
+			<td>전화번호</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>대전</td>
+			<td>010-222-333</td>
+		</tr>
+		<tr>
+			<td>진달래</td>
+			<td>서울</td>
+			<td>010-444-555</td>
+		</tr>
+		<tr>
+			<td>개나리</td>
+			<td>부산</td>
+			<td>010-777-888</td>
+		</tr>
+		<tr>
+			<td>무궁화</td>
+			<td>대구</td>
+			<td>010-555-999</td>
+		</tr>
+	</table>
+	<button id="btn2" type="button">실행</button>
+	<div id="result1"></div>	
+</div>
+</body>
+</html>

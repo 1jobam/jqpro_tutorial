@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+
+	$(function(){
+		$('#btn1').on('click', function(){
+			//$('input[type=checkbox]')
+
+			str = "당신의 취미는 ";
+			$(':checkbox:checked').each(function(i){
+				str += $(this).val() + " ";
+			});
+			str += "이군용";
+			
+			$('#result1').html(str);
+		})
+		
+		
+		$('select#spring').on('change',function(){
+			
+			str = "봄소식을 알리는 꽃이 피어요 : " + "<br/>";
+			$('option:selected', this).each(function(){
+				str += $(this).val() + "<br/>";
+			})
+			$('#result2').html(str);
+		})
+	})
+
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h2> form 상태필터 </h2>
+	<pre>
+	:checkbox:checked
+	</pre>
+	
+	<form>
+	취 미 :
+	 <input type="checkbox" name="hobby" value="여행" checked>여행
+	<input type="checkbox" name="hobby" value="장기">장기
+	<input type="checkbox" name="hobby" value="바둑">바둑
+	<input type="checkbox" name="hobby" value="독서" >독서
+	<input type="checkbox" name="hobby" value="낚시">낚시<br><br>
+	</form>
+
+	<button id="btn1" type="button">실행</button>	
+	<div id="result1"></div>
+</div>
+
+<div class="box">
+	<h2> form 상태필터 </h2>
+	<pre>
+ 	option:selected
+ 	
+ 	select의 change이벤트
+	</pre>
+	<form>
+	봄소식 : <br/><br/>
+	 <select  name="spring"  id="spring" multiple size="6">
+		<option  >개나리</option>
+		<option selected>진달래</option>
+		<option>민들레</option>
+		<option selected>벚꽃</option>
+		<option>목련</option>
+		<option>철쭉</option>
+	</select>
+	</form>
+	<div id="result2"></div>
+</div>
+</body>
+</html>
