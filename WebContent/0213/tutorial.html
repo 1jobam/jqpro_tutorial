@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+
+	$(function(){
+		
+		$('#btn1').on('click',function(){
+			$('.box1 li.st').next().css('border', '2px solid red');
+		});
+		
+		$('#btn2').on('click',function(){
+			$('.box1 li.st').nextAll().css('border', '2px solid red');
+		});
+		
+		$('#btn3').on('click',function(){
+			$('.box1 li.st').nextUntil('.box1 li.so').css('border', '2px solid red');
+		});
+		
+		$('#btn4').on('click',function(){
+			$('.box2 li.st').parent().css('border', '2px solid red');
+		});
+		
+		$('#btn5').on('click',function(){
+			$('.box2 li.st').parents().css('border', '2px solid red');
+		});
+		
+		$('#btn6').on('click',function(){
+			$('.box2 li.st').parentsUntil('.box2 li.so').css('border', '2px solid red');
+		});
+		
+		$('#btn7').on('click',function(){
+			$('.box3 li.st').prev().css('border', '2px solid red');
+		});
+		
+		$('#btn8').on('click',function(){
+			$('.box3 li.st').prevAll().css('border', '2px solid red');
+		});
+		
+		$('#btn9').on('click',function(){
+			$('.box3 li.st').prevUntil('.box3 li.so').css('border', '2px solid red');
+		});
+		
+		$('#btn10').on('click',function(){
+			$('.box4 li.st').siblings().css('border', '2px solid red');
+		});
+	})
+
+</script>
+</head>
+<body>
+
+<div class="box1">
+	<h2> next 과제 </h2>
+	<pre>
+	next()
+	nextAll()
+	nextUntil()
+	</pre>
+	<ul>
+		<li>test1</li>
+		<li>test2</li>
+		<li class="st">test3</li>
+		<li>test4</li>
+		<li class="so">test5</li>
+	</ul>
+	<button id='btn1' type="button">next</button>
+	<button id='btn2' type="button">nextAll</button>
+	<button id='btn3' type="button">nextUntil</button>
+</div>
+
+<div class="box2">
+	<h2> parent 과제 </h2>
+	<pre>
+	parent()
+	parents()
+	parentsUntil()
+	</pre>
+	<ul>
+		<li>test1</li>
+		<li>test2</li>
+		<li class="st">test3</li>
+		<li>test4</li>
+		<li class="so">test5</li>
+	</ul>
+	<button id='btn4' type="button">parent</button>
+	<button id='btn5' type="button">parents</button>
+	<button id='btn6' type="button">parentsUntil</button>
+</div>
+
+<div class="box3">
+	<h2> prev 과제 </h2>
+	<pre>
+	prev()
+	prevAll()
+	prevUntil()
+	</pre>
+	<ul>
+		<li>test1</li>
+		<li>test2</li>
+		<li class="st">test3</li>
+		<li>test4</li>
+		<li class="so">test5</li>
+	</ul>
+	<button id='btn7' type="button">prev</button>
+	<button id='btn8' type="button">prevAll</button>
+	<button id='btn9' type="button">prevUntil</button>
+</div>
+
+<div class="box4">
+	<h2> siblings 과제 </h2>
+	<pre>
+	siblings()
+	</pre>
+	<ul>
+		<li>test1</li>
+		<li>test2</li>
+		<li class="st">test3</li>
+		<li>test4</li>
+		<li class="so">test5</li>
+	</ul>
+	<button id='btn10' type="button">siblings</button>
+</div>
+</body>
+</html>

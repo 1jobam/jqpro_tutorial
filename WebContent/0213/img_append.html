@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+
+	$(function(){
+		
+		$('#btn1').on('click',function(){
+			x = setInterval(function(){
+				$('img:first').appendTo('#result1');
+			}, 100);
+			
+			$(this).css('display','none');
+			$('#btn2').css('display','inline');
+		});
+		
+		$('#btn2').on('click', function(){
+			clearInterval(x);
+			$(this).css('display','none');
+			$('#btn1').css('display','inline');
+		});
+		
+		$('p').on('click',function(){
+			vtit = $(this).attr('title') + ".jpg";
+
+			vimg = $('<img>',{
+				'src' : '../images/' + vtit,
+				'width' : '300px',
+				'height' : '300px'
+// 			}).appendTo(this);
+			}).insertAfter(this);
+
+		});
+		
+	})
+
+</script>
+<style type="text/css">
+	#btn2{
+		display: none;
+	}
+</style>
+</head>
+<body>
+
+<div class="box">
+	<h2> 이미지 회전 </h2>
+	<pre>
+	img:first
+	append() / appendTo()
+	
+	추가시 기존의 요소를 추가하면 기존의 요소를 이동한다
+	
+	$('img:first').appendTo('#result')
+	$('#result1').append('img:first')
+	</pre>
+	<button id="btn1" type="button">실행</button>
+	<button id="btn2" type="button">정지</button>
+	<div id="result1">
+		<img src="../images/image.1.jpg"/>
+		<img src="../images/image.2.jpg"/>
+		<img src="../images/image.3.jpg"/>
+		<img src="../images/image.4.jpg"/>
+		<img src="../images/image.5.jpg"/>
+	</div>	
+</div>
+
+<div class="box">
+	<h2> 이미지 추가 </h2>
+	<pre>
+		p태그의 text를 클릭하면 그 text에 맞는 이미지를 추가한다.
+	</pre>
+	
+	<div id="result2">
+		<p title="americano">아메리카노</p>
+		<p title="cafelatte">카페라떼</p>
+		<p title="cappuccino">카푸치노</p>
+		<p title="핫초코">핫초코</p>
+		<p title="음식">음식</p>
+	</div>	
+</div>
+
+
+</body>
+</html>

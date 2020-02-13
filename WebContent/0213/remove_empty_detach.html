@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+
+	$(function(){
+
+		$('#emp1').on('click', function(){
+			$('#dd').empty();
+		});
+		
+		$('#re1').on('click', function(){
+			$('#dd').remove();
+		});
+		
+		$('.pp').on('click', function(){
+			$(this).css('font-size','+=2px');
+		})
+		
+		$('#re2').on('click',function(){
+			$('#result2').append($('#p1').remove());
+		})
+		
+		$('#de2').on('click',function(){
+			$('#p2').detach().appendTo('#result2');
+		})
+		
+		$('#cl').on('click',function(){
+			$('#cp3').clone().prependTo('#result3');
+		})
+		
+		$('#clt').on('click',function(){
+			$('#result3').prepend($('#cp4').clone(true));
+		})
+		
+	})
+
+</script>
+</head>
+<style>
+	#dd{
+		background : yellow;
+	}
+</style>
+<body>
+
+<div class="box">
+	<h2> 비우기와 지우기 </h2>
+	<pre>
+	empty() : 대상요소는 삭제하지 않고 자식들만 지운다
+	remove() : 대상요소뿐만 아니라 자식요소까지 함께 지워진다
+	</pre>
+	<div id="dd">
+	오늘은 목요일, 내일은 금요일, 모레는 토요일<br/>
+	우리는 매일매일 고고~~
+	</div>
+	<button id="emp1" type="button">empty</button>
+	<button id="re1" type="button">remove</button>
+
+	<div id="result1"></div>	
+</div>
+
+<div class="box">
+	<h2> 삭제시 이벤트 확인 </h2>
+	<pre>
+	remove() : 요소 삭제시 이벤트 핸들러도 삭제
+	detach() : 요소 삭제시 이벤트 핸들러는 삭제되지 않는다
+	</pre>
+	
+	<p class="pp" id="p1">무궁화 꽃이 피었습니다</p>
+	<p class="pp" id="p2">제주도엔 유채꽃이 활짝 피었고요</p>
+	<p class="pp" id="p3">남쪽에선 곧 매화 산수유도 피겠지요</p>
+	<p class="pp" id="p4">꽃놀이는 꿈도 못꿔요~~~</p>
+	<button id="re2" type="button">remove</button>
+	<button id="de2" type="button">detach</button>
+	
+	<div id="result2"></div>	
+</div>
+
+<div class="box">
+	<h2> 복사시 이벤트 확인 </h2>
+	<pre>
+	clone() : 요소를 복사할때 이벤트는 복사되지 않는다.
+	clone(true) : 요소를 복사할때 이벤트 핸들러도 함께 복사된다. 
+	</pre>
+	
+	<p class="pp" id="cp1">무궁화 꽃이 피었습니다</p>
+	<p class="pp" id="cp2">제주도엔 유채꽃이 활짝 피었고요</p>
+	<p class="pp" id="cp3">남쪽에선 곧 매화 산수유도 피겠지요</p>
+	<p class="pp" id="cp4">꽃놀이는 꿈도 못꿔요~~~</p>
+	<button id="cl" type="button">clone</button>
+	<button id="clt" type="button">clonetrue</button>
+	
+	<div id="result3"></div>	
+</div>
+</body>
+</html>
