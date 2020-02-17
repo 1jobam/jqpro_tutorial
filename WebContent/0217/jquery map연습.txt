@@ -1,0 +1,17 @@
+1. $('p').on('click',function(){})
+
+2. $('p').bind('click', function({})
+
+3. $('p).click(function(){})
+
+4. $('p').bind('click', "hello", proc)
+
+	function proc(data){
+		alert(data)
+	}
+
+
+
+5. $('p').on('click' : function(){},
+		'mouseover' : function(){},
+		'mouseout' : function(){})

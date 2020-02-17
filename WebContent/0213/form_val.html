@@ -28,8 +28,17 @@
 		});
 		
 		$('#btnchange').on('click',function(){
+			//btnchange버튼은 submit기능을 수행하는 버튼이다
+			//submit 기능을 제거하기 위해서
+			event.preventDefault();
 			
+			//이름 입력
+			name = prompt("이름 입력");
+			
+			//id=user인 input요소의 값으로 설정
+			$('#user').val(name);
 		});
+		
 		
 	})
 
@@ -62,7 +71,7 @@
 		</select><br>
 		
 	<button type="button" id="btnview">조사하기 </button>
-	<button type="button"  id="btnchange">이름변경 </button>
+	<button id="btnchange">이름변경 </button>
 	</form>
 
 	<div id="result1"></div>	

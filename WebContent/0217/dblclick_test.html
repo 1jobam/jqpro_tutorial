@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+
+	$(function(){
+		
+		$('#btn1').on('click',function(){
+			$('img').show();
+		});
+		
+		$('img').on('dblclick',function(){
+			$(this).hide();
+		})
+		
+		//원래이미지로 temp속성을 설정 하는 부분
+		$('img').attr('temp', function(){
+	   		aa = $(this).attr('src');
+	   		return aa;
+   		})
+		
+		/* $('img').hover(function(){
+			//mouseover
+			//src의 값을 가져와서 temp변수에 저장
+			temp = $(this).attr('src');
+			//src2의 값을 가져온다
+			b = $(this).attr('src2');
+			//src의 값을 src2의 값으로 변경한다.
+			$(this).attr('src', b); 
+			
+		},function(){
+			//mouseout
+			//temp의 값을 src의 값으로 변경한다.
+			$(this).attr('src', temp);
+		}) */
+		
+   	    $('img').hover(function(){
+   		   //mouseover
+   		   //src의 값을 가져와서 temp변수에 저장 
+   		   //temp = $(this).attr('src');
+   		   
+   		   //src2의 값을 가져온다 
+   		   temp2 =$(this).attr('src2');
+   		   
+   		   //src의 값을 src2의 값으로 변경한다
+   		   $(this).attr('src',temp2);
+   		   
+   	    },function(){
+   		  //mouseout 
+   		   //temp의 값을 src의 값으로 변경한다
+   	    	temp = $(this).attr('temp');
+   		   
+   		   //src의 속성값을  temp로 바꾼다 
+   		   $(this).attr('src',temp);
+   	   }) 
+
+	})
+
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h2> </h2>
+	<pre>
+
+	</pre>
+	<button id="btn1" type="button">보이기</button>
+	<div id="result1">
+		<img src="../images/image.1.jpg" src2="../images/image.4.jpg">
+		<img src="../images/image.2.jpg" src2="../images/image.5.jpg">
+		<img src="../images/image.3.jpg" src2="../images/image.6.jpg">	
+	</div>
+</div>
+</body>
+</html>

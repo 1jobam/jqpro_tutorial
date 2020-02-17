@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+
+	$(function(){
+		//$('.but').bind('click',function(){}) 3.0부터 bind에서 on으로 바뀜
+		$('.but').on('click', function(){
+			$('<button/>', {
+				'class' : 'but',
+				'type' : 'button',
+				'text' : '새로운 버튼'
+			}).appendTo('#result1');
+		});
+		
+	})
+
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h2> bind </h2>
+	<pre>
+	기존의 버튼에만 이벤트 핸들러가 적용되고
+	새롭게 만들어진 요소에는 이벤트 핸들러가 적용되지 않는다
+	</pre>
+	<div id="d1">
+		<button class="but" type="button">버튼 1</button>
+		<button class="but" type="button">버튼 2</button>
+		<button class="but" type="button">버튼 3</button>
+	</div>
+	<button type="button">해제</button>
+	<div id="result1"></div>	
+</div>
+</body>
+</html>
