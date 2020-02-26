@@ -8,14 +8,20 @@
 <script>
 
 	$(function(){
-		//$('.but').bind('click',function(){}) 3.0부터 bind에서 on으로 바뀜
+		//$('.but').bind('click', function(){ })
+		
 		$('.but').on('click', function(){
 			$('<button/>', {
-				'class' : 'but',
-				'type' : 'button',
-				'text' : '새로운 버튼'
+				   'class' : 'but',
+				   'type'  : 'button',
+				   'text'  : '새로운 버튼'
 			}).appendTo('#result1');
-		});
+		})
+		
+		$('#clear').on('click', function(){
+			//$('.but').unbind('click')
+			$('.but').off('click');
+		})
 		
 	})
 
@@ -34,7 +40,7 @@
 		<button class="but" type="button">버튼 2</button>
 		<button class="but" type="button">버튼 3</button>
 	</div>
-	<button type="button">해제</button>
+	<button id="clear" type="button">해제</button>
 	<div id="result1"></div>	
 </div>
 </body>

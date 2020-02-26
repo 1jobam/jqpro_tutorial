@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+
+	$(function(){
+		$('#show').on('click',function(){
+			$('img').show(3000, 'swing', function(){
+				alert("커피 나왔어요");	
+			});
+			
+		})
+		$('#hide').on('click',function(){
+			$('img').hide(3000, 'linear', function(){
+				alert("커피가 사라졌어요");	
+			});
+			alert("짠");
+		})
+		$('#toggle').on('click',function(){
+			$('img').toggle(1000);
+		})
+		$('#sup').on('click',function(){
+			$('img').slideUp(500);
+		})
+		$('#sdown').on('click',function(){
+			$('img').slideDown("slow");
+		})
+		$('#stog').on('click',function(){
+			$('img').slideToggle("fast");
+		})
+		$('#fin').on('click',function(){
+			$('img').fadeIn(500);
+		})
+		$('#fout').on('click',function(){
+			$('img').fadeOut(1000);
+		})
+		$('#fto').on('click',function(){
+			$('img').fadeTo(1000, 0.5);
+		})
+		$('#ftog').on('click',function(){
+			$('img').fadeToggle(600);
+		})
+	})
+
+</script>
+<style type="text/css">
+	img{
+		width: 200px;
+		height: 200px;
+	}
+	#result1{
+		height : 400px;
+	}
+</style>
+</head>
+<body>
+
+<div class="box">
+	<h2>effect(효과)</h2>
+	<pre>
+		$(selector).show(speed, easing, fn)
+	</pre>
+	<button id="show" type="button">show</button>
+	<button id="hide" type="button">hide</button>
+	<button id="toggle" type="button">toggle</button>
+	<button id="sup" type="button">slideUp</button>
+	<button id="sdown" type="button">slideDown</button>
+	<button id="stog" type="button">SlideToggle</button>
+	<button id="fin" type="button">fadeIn</button>
+	<button id="fout" type="button">fadeOut</button>
+	<button id="fto" type="button">fadeTo</button>
+	<button id="ftog" type="button">fadeToggle</button>
+	
+	<div id="result1">
+		<img src="../images/아메리카노.jpg"/>
+	</div>	
+</div>
+</body>
+</html>

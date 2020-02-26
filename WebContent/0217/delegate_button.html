@@ -8,13 +8,20 @@
 <script>
 
 	$(function(){
-		$(document).on('click', '.but', function(){
+		
+// 		$('.dd').delegate('.but', 'click', function(){
+// 		$(document).on('click', '.but', function(){
+		$('.dd').on('click', '.but', function(){
 			$('<button/>', {
 				'class' : 'but',
 				'type' : 'button',
 				'text' : '새로운 버튼'
 			}).appendTo('#result1');
 		});
+		
+		$('#clear').on('click',function(){
+			$('.dd').off('click');
+		})
 	})
 
 </script>
@@ -33,7 +40,7 @@
 		<button class="but" type="button">버튼 3</button>
 	</div>
 	
-	<button type="button">해제</button>
+	<button id="clear" type="button">해제</button>
 	
 	<div class="dd" id="result1"></div>	
 </div>

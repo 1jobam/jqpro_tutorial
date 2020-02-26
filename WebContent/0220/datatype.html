@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+	$(function() {
+		
+		$('#txt').on('click',function(){
+			
+			$.ajax({
+				url : '../0219/txt.jsp',
+				type : 'get',
+				success : function(res){
+					//res = 홍길동/진달래/개나리/무궁화/임꺽정/신나라
+					res = res.split("/");
+					code = "<ul>";
+					$.each(res, function(i){
+						code += "<li>" + res[i] + "</li>";
+					})
+					
+					$('#result1').html(code)
+				},
+				error : function(xhr){
+					alert(xhr.status);
+				},
+				dataType : 'text'
+			})
+		})
+		
+		$('#jarr').on('click',function(){
+			
+			$.ajax({
+				url : '../0219/jarr.jsp',
+				type : 'get',
+				success : function(res){
+					//res = ["홍길동", "강현철", "강현지", "정보람", "연은주", "김지선"]
+					code = "<ol>"
+					$.each(res, function(i) {
+						code += "<li>" + res[i] + "</li>";
+					})
+					code += "</ol>";
+					$('#result2').html(code);
+				},
+				error : function(xhr){
+					alert(xhr.status);
+				},
+				dataType : 'JSON'
+			
+			})
+			
+		})
+		
+		$('#jobj').on('click',function(){
+			
+			$.get(
+				'../0219/jobj.jsp',
+				function(res){
+					code = "이름 : " + res.name + "<br/>";
+					code += "전화번호 : " + res.tel + "<br/>";
+					code += "주소 : " + res.addr + "<br/>";
+					code += "우편번호 : " + res.zip + "<br/>";
+					$('#result3').html(code);
+				},
+				'json'
+			)
+			
+		})
+		
+		$('#jobjarr').on('click',function(){
+		
+			$.get(
+				'../0219/jobjarr.jsp',
+				function(res){
+					code = '';
+					$.each(res, function(i){
+						code += (i+1) + "번째 자료 <br/>";
+						code += "이름 : " + res[i].name + "<br/>";
+						code += "전화번호 : " + res[i].tel + "<br/>";
+						code += "주소 : " + res[i].addr + "<br/>";
+						code += "우편번호 : " + res[i].zip + "<br/>";
+					})
+					$('#result4').html(code);
+				},
+				'json'
+			)
+			
+		})
+		
+		
+	})
+</script>
+<style type="text/css">
+.box div {
+	float: left;
+	width: 200px;
+	height: auto;
+	margin: 5px;
+	padding: 10px;
+}
+</style>
+</head>
+<body>
+
+	<div class="box">
+		<h2></h2>
+		<pre>
+
+	</pre>
+		<button id="txt" type="button">txt실행</button>
+		<button id="jarr" type="button">jarr실행</button>
+		<button id="jobj" type="button">jobj실행</button>
+		<button id="jobjarr" type="button">jobjarr실행</button>
+		<br />
+		<div id="result1"></div>
+		<div id="result2"></div>
+		<div id="result3"></div>
+		<div id="result4"></div>
+	</div>
+</body>
+</html>

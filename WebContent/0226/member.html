@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+<script>
+
+	$(function(){
+
+	})
+
+</script>
+<style type="text/css">
+	h1{
+		text-align: center;
+		font-weight: bold;
+		margin: 15px;
+	}
+	label{
+		width: 150px;
+		text-align: center;
+	}
+	hr{
+		width:650px;
+		border: 2px dotted pink;
+	}
+	
+	input{
+		margin: 10px;
+	}
+	
+	.lines{
+		border : 10px solid lightgray;
+	}
+</style>
+</head>
+<body>
+
+
+<div class="container">
+
+<h1>회원가입</h1>
+
+<form class="form-inline">
+
+<div class="lines">
+	<div class="form-group">
+	<label for="id">아이디 : </label>
+	<input id="id" class="form-control" type="text">
+	<input type="button" value="중복검사">
+	</div>
+	<br/><hr/>
+	
+	<div class="form-group">
+	<label for="name">이름 : </label>
+	<input id="name" class="form-control" type="text">
+	</div>
+	<br/><hr/>
+	
+	<div class="form-group">
+	<label for="birday">생년월일 : </label>
+	<input id="birday" class="form-control" type="date">
+	</div>
+	<br/><hr/>
+	
+	<div class="form-group">
+	<label for="pwd">비밀번호 : </label>
+	<input id="pwd" class="form-control" type="password">
+	</div>
+	<br/><hr/>
+	
+	<div class="form-group">
+	<label for="tel">휴대폰 번호 : </label>
+	<input id="tel" class="form-control" type="text" placeholder="010-1234-1234">
+	</div>
+	<br/><hr/>
+	
+	<div class="form-group">
+	<label for="email">이메일 : </label>
+	<input id="email" class="form-control" type="text" placeholder="asd123@email.com">
+	</div>
+	<br/><hr/>
+	
+	<div class="form-group">
+	<label>우편번호</label>
+	<input class="form-control" type="text">
+	<input type="button" value="번호검색">
+	</div><br/>
+	
+	<div class="form-group">
+	<label>주소 : </label>
+	<input class="form-control" type="text">
+	</div><br/>
+	
+	<div class="form-group">
+	<label>상세주소 : </label>
+	<input class="form-control" type="text">
+	</div><br/>
+	<br/>
+</div>	
+
+	
+	<input class=".btn-primary" type="button" value="제출">
+	<input class=".btn" type="reset" value="초기화">
+	
+	</form>
+
+</div>
+		
+
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/mystyle.css">
+<script>
+
+	$(function(){
+
+		/* $('#btn1').on('click',function(){
+			
+			$.get(
+				'lprod.jsp',
+				function(res){
+					   code = "<table border=1>";
+					   code += "<tr><td>lprod_id</td><td>lprod_gu</td><td>lprod_nm</td></tr>";
+					$.each(res, function(i){
+						code += "<tr><td>"+ res[i].id + "</td>";
+						code += "<td>" + res[i].gu + "</td>";
+						code += "<td>" + res[i].nm + "</td></tr>";	
+					})
+						code += "</table>";
+					
+					$('#result1').html(code);
+				},
+				'json'
+			)
+			
+		}) */
+		
+		 $('#btn1').on('click', function(){
+			 console.log("click");
+			 
+			 $.ajax({
+				 url : 'lprod.jsp',
+				 type : 'get',
+				 success : function(res){
+					 
+					code = "";
+					$.each(res, function(i){
+						code += "LPROD_ID : " + res[i].id + "<br>";
+						code += "LPROD_GU : " + res[i].gu + "<br>";
+						code += "LPROD_NM : " + res[i].nm + "<br>";
+						code += "<hr color='blue'>";
+					})
+					$('#result1').html(code);
+				 },
+				 error : function(xhr,res){
+					alert("상태 : " + xhr.status +
+							 "\n 정보 : " +xhr.statusText + 
+							 "\n 메세지 : " + res.responseText);
+					
+				 },
+				 dataType : 'json'
+			 })
+		 })
+		
+	})
+
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h2> </h2>
+	<pre>
+
+	</pre>
+	<button id='btn1' type="button">lprodlist</button>
+	<div id="result1"></div>	
+</div>
+</body>
+</html>
